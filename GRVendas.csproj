@@ -105,6 +105,7 @@
     <Compile Include="br.com.grvendas.view\CadastroClientes.Designer.cs">
       <DependentUpon>CadastroClientes.cs</DependentUpon>
     </Compile>
+    <Compile Include="br.com.vendas.conexao\ConnectionFactory.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,7 +142,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="br.com.grvendas.dao\" />
-    <Folder Include="br.com.vendas.conexao\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

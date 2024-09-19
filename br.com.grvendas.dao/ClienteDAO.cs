@@ -263,5 +263,44 @@ namespace GRVendas.br.com.grvendas.dao
 
         #endregion
 
+        #region listarClientesPorNome
+
+        public DataTable listarClientesPorNome(string nome)
+        {
+            try
+            {
+                // 1- Criar o datatable e o comando SQL
+
+                DataTable tabelacliente = new DataTable();
+                string sql = @"select * from tb_clientes where nome like @nome";
+
+                // 2 - Organizar o comando SQL e executar
+                MySqlCommand executaCmd = new MySqlCommand(sql, conexao);
+                executaCmd.Parameters.AddWithValue("@nome", nome); // Passando o parâmetro nome para a consulta
+
+                conexao.Open();
+                executaCmd.ExecuteNonQuery();
+
+                // 3 - Criar o MySqlDataAdapter ( adaptador ) e preencher os dados no datatable
+                // passando como parâmetro o comando SQL executaCmd
+
+                MySqlDataAdapter dataadapter = new MySqlDataAdapter(executaCmd);
+                dataadapter.Fill(tabelacliente); // Preencher o datatable com os dados do banco de dados 
+
+                // 4 - Fechar a conexão
+                conexao.Close();
+
+                return tabelacliente;
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Aconteceu o erro:" + erro);
+                return null;
+            }
+        }
+
+        #endregion
+
     }
 }

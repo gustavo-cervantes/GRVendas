@@ -124,5 +124,16 @@ namespace GRVendas.br.com.grvendas.view
             dgvCliente.DataSource = dao.listarClientes();
 
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string nome = txtPesquisa.Text;
+            string cidade = txtPesquisa.Text;
+
+            ClienteDAO dao = new ClienteDAO(); // Instanciar a classe DAO 
+
+            dgvCliente.DataSource = dao.buscarClientePorNome(nome);
+            dgvCliente.DataSource = dao.buscarClientePorCidade(cidade);
+        }
     }
 }

@@ -12,7 +12,7 @@ using System.Windows.Forms;
 namespace GRVendas.br.com.grvendas.dao
 {
     public class ClienteDAO
-    {   
+    {
 
         private MySqlConnection conexao; // Atributo de conexão
         public ClienteDAO()
@@ -92,7 +92,7 @@ namespace GRVendas.br.com.grvendas.dao
                 conexao.Close();
 
                 return tabelacliente;
-                
+
             }
             catch (Exception erro)
             {
@@ -183,6 +183,85 @@ namespace GRVendas.br.com.grvendas.dao
 
         #endregion
 
-        // Método buscarClientePorCpf
+        #region buscarClientePorNome
+        // Método buscarClientePorNome
+
+        public DataTable buscarClientePorNome(string nome)
+        {
+            try
+            {
+                // 1- Criar o datatable e o comando SQL
+
+                DataTable tabelacliente = new DataTable();
+                string sql = @"select * from tb_clientes where nome=@nome";
+
+                // 2 - Organizar o comando SQL e executar
+                MySqlCommand executaCmd = new MySqlCommand(sql, conexao);
+                executaCmd.Parameters.AddWithValue("@nome", nome); // Passando o parâmetro nome para a consulta
+
+                conexao.Open();
+                executaCmd.ExecuteNonQuery();
+
+                // 3 - Criar o MySqlDataAdapter ( adaptador ) e preencher os dados no datatable
+                // passando como parâmetro o comando SQL executaCmd
+
+                MySqlDataAdapter dataadapter = new MySqlDataAdapter(executaCmd);
+                dataadapter.Fill(tabelacliente); // Preencher o datatable com os dados do banco de dados 
+
+                // 4 - Fechar a conexão
+                conexao.Close();
+
+                return tabelacliente;
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Aconteceu o erro:" + erro);
+                return null;
+            }
+        }
+
+
+        #endregion
+
+        #region buscarClientePorCidade
+
+        public DataTable buscarClientePorCidade(string cidade)
+        {
+            try
+            {
+                // 1- Criar o datatable e o comando SQL
+
+                DataTable tabelacliente = new DataTable();
+                string sql = @"select * from tb_clientes where cidade=@cidade";
+
+                // 2 - Organizar o comando SQL e executar
+                MySqlCommand executaCmd = new MySqlCommand(sql, conexao);
+                executaCmd.Parameters.AddWithValue("@cidade", cidade); // Passando o parâmetro nome para a consulta
+
+                conexao.Open();
+                executaCmd.ExecuteNonQuery();
+
+                // 3 - Criar o MySqlDataAdapter ( adaptador ) e preencher os dados no datatable
+                // passando como parâmetro o comando SQL executaCmd
+
+                MySqlDataAdapter dataadapter = new MySqlDataAdapter(executaCmd);
+                dataadapter.Fill(tabelacliente); // Preencher o datatable com os dados do banco de dados 
+
+                // 4 - Fechar a conexão
+                conexao.Close();
+
+                return tabelacliente;
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Aconteceu o erro:" + erro);
+                return null;
+            }
+        }
+
+        #endregion
+
     }
 }

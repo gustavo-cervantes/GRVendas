@@ -134,6 +134,11 @@ namespace GRVendas.br.com.grvendas.view
 
             dgvCliente.DataSource = dao.buscarClientePorNome(nome);
             dgvCliente.DataSource = dao.buscarClientePorCidade(cidade);
+
+            if (dgvCliente.Rows.Count == 0) // Se a busca for vazia, recarregar o grid
+            {
+               dgvCliente.DataSource = dao.listarClientes();
+            }
         }
     }
 }

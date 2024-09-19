@@ -140,5 +140,21 @@ namespace GRVendas.br.com.grvendas.view
                dgvCliente.DataSource = dao.listarClientes();
             }
         }
+
+        private void txtPesquisa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            string nome = "%" + txtPesquisa.Text + "%";
+            string cidade = "%" + txtPesquisa.Text + "%";
+
+            ClienteDAO dao = new ClienteDAO(); // Instanciar a classe DAO 
+
+            dgvCliente.DataSource = dao.listarClientesPorNome(nome);
+            dgvCliente.DataSource = dao.listarClientesPorNome(cidade);
+
+            if (dgvCliente.Rows.Count == 0) // Se a busca for vazia, recarregar o grid
+            {
+                dgvCliente.DataSource = dao.listarClientes();
+            }
+        }
     }
 }

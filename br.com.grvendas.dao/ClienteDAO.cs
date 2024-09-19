@@ -53,6 +53,9 @@ namespace GRVendas.br.com.grvendas.dao
 
                 MessageBox.Show("Cliente cadastrado com sucesso!");
 
+                // 4 - Fechar a conexão
+                conexao.Close();
+
             }
             catch (Exception erro)
             {
@@ -85,6 +88,9 @@ namespace GRVendas.br.com.grvendas.dao
                 MySqlDataAdapter dataadapter = new MySqlDataAdapter(executaCmd);
                 dataadapter.Fill(tabelacliente); // Preencher o datatable com os dados do banco de dados 
 
+                // 4 - Fechar a conexão
+                conexao.Close();
+
                 return tabelacliente;
                 
             }
@@ -96,14 +102,14 @@ namespace GRVendas.br.com.grvendas.dao
         }
         #endregion
 
-        #region alterarCliente
+        #region editarCliente
         // Método alterarCliente
-        public void alterarCliente(Cliente obj)
+        public void editarCliente(Cliente obj)
         {
             try
             {
                 // 1 - Definir o comando SQL - insert into
-                string sql = @"update tb_clientes set (nome=@nome, rg=@rg, cpf=@cpf, email=@email, telefone=@telefone, celular=@celular, cep=@cep, endereco=@endereco, numero=@numero, complemento=@complemento, bairro=@bairro, cidade=@cidade, estado=@estado) 
+                string sql = @"UPDATE tb_clientes SET nome=@nome, rg=@rg, cpf=@cpf, email=@email, telefone=@telefone, celular=@celular, cep=@cep, endereco=@endereco, numero=@numero, complemento=@complemento, bairro=@bairro, cidade=@cidade, estado=@estado 
                 where id=@id";
 
                 // 2 - Organizar o comando SQL
@@ -130,6 +136,9 @@ namespace GRVendas.br.com.grvendas.dao
                 executaCmd.ExecuteNonQuery();
 
                 MessageBox.Show("Cliente alterado com sucesso!");
+
+                // 4 - Fechar a conexão
+                conexao.Close();
 
             }
             catch (Exception erro)
@@ -162,6 +171,8 @@ namespace GRVendas.br.com.grvendas.dao
 
                 MessageBox.Show("Cliente excluido com sucesso!");
 
+                // 4 - Fechar a conexão
+                conexao.Close();
             }
             catch (Exception erro)
             {

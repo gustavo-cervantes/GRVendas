@@ -17,5 +17,10 @@ namespace GRVendas.br.com.vendas.conexao
             string conexao = ConfigurationManager.ConnectionStrings["bdvendas"].ConnectionString;
             return new MySqlConnection(conexao);
         }
+
+        internal MySqlConnection getConnection()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

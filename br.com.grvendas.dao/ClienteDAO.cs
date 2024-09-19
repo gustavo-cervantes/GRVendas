@@ -16,7 +16,7 @@ namespace GRVendas.br.com.grvendas.dao
         private MySqlConnection conexao; // Atributo de conexão
         public ClienteDAO()
         {
-            this.conexao = new ConnectionFactory().getConnection(); // Instanciando a conexão com o banco de dados
+            this.conexao = new ConnectionFactory().getconnection(); // Instanciando a conexão com o banco de dados
         }
 
         #region cadastrarCliente
@@ -55,7 +55,7 @@ namespace GRVendas.br.com.grvendas.dao
             }
             catch (Exception erro)
             {
-
+                MessageBox.Show("Aconteceu o erro:" + erro);
                 throw;
             }
         }

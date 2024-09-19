@@ -1,4 +1,5 @@
-﻿using GRVendas.br.com.grvendas.model;
+﻿using GRVendas.br.com.grvendas.dao;
+using GRVendas.br.com.grvendas.model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,13 +20,31 @@ namespace GRVendas.br.com.grvendas.view
             InitializeComponent();
         }
 
+        public ClienteDAO ClienteDAO { get; private set; }
+
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            // 1 - Armazenar os dados em um objeto model
+            // 1 - Receber os dados dentro do objeto modelo de cliente
 
             Cliente obj = new Cliente();
             obj.Nome = txtNome.Text;
+            obj.Rg = txtRg.Text;
+            obj.Cpf = txtCpf.Text;
             obj.Email = txtEmail.Text;
+            obj.Telefone = txtTelefone.Text;
+            obj.Celular = txtCelular.Text;
+            obj.Cep = txtCep.Text;
+            obj.Endereco = txtEndereco.Text;
+            obj.Numero = int.Parse(txtNumero.Text);
+            obj.Complemento = txtComplemento.Text;
+            obj.Bairro = txtBairro.Text;
+            obj.Cidade = txtCidade.Text;
+            obj.Estado = cbEstado.Text;
+
+            // 2 - Criar um da classe DAO e chamar o método de cadastrarCliente
+            ClienteDAO dao = new ClienteDAO();
+            dao.cadastrarCliente(obj);
+
         }
     }
 }

@@ -46,5 +46,11 @@ namespace GRVendas.br.com.grvendas.view
             dao.cadastrarCliente(obj);
 
         }
+
+        private void CadastroClientes_Load(object sender, EventArgs e)
+        {
+            ClienteDAO dao = new ClienteDAO();
+            dgvCliente.DataSource = dao.listarClientes();
+        }
     }
 }

@@ -3,6 +3,7 @@ using GRVendas.br.com.vendas.conexao;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -61,11 +62,46 @@ namespace GRVendas.br.com.grvendas.dao
         }
         #endregion
 
+        #region listarClientes
+        // Método listarClientes
+        public DataTable listarClientes()
+        {
+            try
+            {
+                // 1- Criar o datatable e o comando SQL
+
+                DataTable tabelacliente = new DataTable();
+                string sql = @"select * from tb_clientes";
+
+                // 2 - Organizar o comando SQL e executar
+                MySqlCommand executaCmd = new MySqlCommand(sql, conexao);
+
+                conexao.Open();
+                executaCmd.ExecuteNonQuery();
+
+                // 3 - Criar o MySqlDataAdapter ( adaptador ) e preencher os dados no datatable
+                // passando como parâmetro o comando SQL executaCmd
+
+                MySqlDataAdapter dataadapter = new MySqlDataAdapter(executaCmd);
+                dataadapter.Fill(tabelacliente); // Preencher o datatable com os dados do banco de dados 
+
+                return tabelacliente;
+                
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Aconteceu o erro:" + erro);
+                return null;
+            }
+        }
+        #endregion
+
+
         // Método alterarCliente
 
         // Método excluirCliente
 
-        // Método listarClientes
+
 
         // Método buscarClientePorCpf
     }

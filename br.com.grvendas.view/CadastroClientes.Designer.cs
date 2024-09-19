@@ -67,13 +67,13 @@
             this.label21 = new System.Windows.Forms.Label();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.dgbCliente = new System.Windows.Forms.DataGridView();
+            this.dgvCliente = new System.Windows.Forms.DataGridView();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tbClientes.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgbCliente)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -475,7 +475,7 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.btnBuscar);
-            this.tabPage2.Controls.Add(this.dgbCliente);
+            this.tabPage2.Controls.Add(this.dgvCliente);
             this.tabPage2.Controls.Add(this.txtPesquisa);
             this.tabPage2.Controls.Add(this.label21);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -486,16 +486,16 @@
             this.tabPage2.Text = "Consulta";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // dgbCliente
+            // dgvCliente
             // 
-            this.dgbCliente.AllowUserToAddRows = false;
-            this.dgbCliente.AllowUserToDeleteRows = false;
-            this.dgbCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgbCliente.Location = new System.Drawing.Point(21, 72);
-            this.dgbCliente.Name = "dgbCliente";
-            this.dgbCliente.ReadOnly = true;
-            this.dgbCliente.Size = new System.Drawing.Size(724, 224);
-            this.dgbCliente.TabIndex = 13;
+            this.dgvCliente.AllowUserToAddRows = false;
+            this.dgvCliente.AllowUserToDeleteRows = false;
+            this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCliente.Location = new System.Drawing.Point(21, 72);
+            this.dgvCliente.Name = "dgvCliente";
+            this.dgvCliente.ReadOnly = true;
+            this.dgvCliente.Size = new System.Drawing.Size(724, 224);
+            this.dgvCliente.TabIndex = 13;
             // 
             // btnBuscar
             // 
@@ -520,6 +520,7 @@
             this.Name = "CadastroClientes";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Clientes";
+            this.Load += new System.EventHandler(this.CadastroClientes_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tbClientes.ResumeLayout(false);
@@ -527,7 +528,7 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgbCliente)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -572,7 +573,7 @@
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.DataGridView dgbCliente;
+        private System.Windows.Forms.DataGridView dgvCliente;
         private System.Windows.Forms.TextBox txtPesquisa;
         private System.Windows.Forms.Label label21;
     }

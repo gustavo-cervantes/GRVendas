@@ -98,6 +98,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="br.com.grvendas.model\Cliente.cs" />
     <Compile Include="br.com.grvendas.view\CadastroClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,7 +141,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="br.com.grvendas.dao\" />
-    <Folder Include="br.com.grvendas.model\" />
     <Folder Include="br.com.vendas.conexao\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

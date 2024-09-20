@@ -156,5 +156,33 @@ namespace GRVendas.br.com.grvendas.view
                 dgvCliente.DataSource = dao.listarClientes();
             }
         }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+            // 1 - Botão consultar/pesquisar CEP
+
+            try
+            {
+                string cep = txtCep.Text;
+                string xml = "https://viacep.com.br/ws/"+cep+"/xml/";
+
+
+                DataSet dados = new DataSet();
+                dados.ReadXml(xml);
+
+                txtEndereco.Text = dados.Tables[0].Rows[0]["logradouro"].ToString();
+                txtBairro.Text = dados.Tables[0].Rows[0]["bairro"].ToString();
+                txtCidade.Text = dados.Tables[0].Rows[0]["localidade"].ToString();
+                cbEstado.Text = dados.Tables[0].Rows[0]["uf"].ToString();
+                txtComplemento.Text = dados.Tables[0].Rows[0]["complemento"].ToString();
+
+            }
+            catch (Exception erro)
+            {
+
+                MessageBox.Show("Erro ao consultar CEP: " + erro.Message);
+                throw;
+            }
+        }
     }
 }

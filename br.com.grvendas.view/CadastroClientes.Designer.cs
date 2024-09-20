@@ -32,6 +32,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tbClientes = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.btnPesquisar = new System.Windows.Forms.Button();
             this.cbEstado = new System.Windows.Forms.ComboBox();
             this.label20 = new System.Windows.Forms.Label();
             this.txtCidade = new System.Windows.Forms.TextBox();
@@ -109,6 +110,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.btnPesquisar);
             this.tabPage1.Controls.Add(this.cbEstado);
             this.tabPage1.Controls.Add(this.label20);
             this.tabPage1.Controls.Add(this.txtCidade);
@@ -144,6 +146,16 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Dados Pessoais";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // btnPesquisar
+            // 
+            this.btnPesquisar.Location = new System.Drawing.Point(501, 164);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Size = new System.Drawing.Size(75, 23);
+            this.btnPesquisar.TabIndex = 28;
+            this.btnPesquisar.Text = "Buscar";
+            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // cbEstado
             // 
@@ -581,5 +593,6 @@
         private System.Windows.Forms.DataGridView dgvCliente;
         private System.Windows.Forms.TextBox txtPesquisa;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button btnPesquisar;
     }
 }

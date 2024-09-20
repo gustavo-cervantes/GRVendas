@@ -100,6 +100,7 @@
   <ItemGroup>
     <Compile Include="br.com.grvendas.dao\ClienteDAO.cs" />
     <Compile Include="br.com.grvendas.model\Cliente.cs" />
+    <Compile Include="br.com.grvendas.model\Helpers.cs" />
     <Compile Include="br.com.grvendas.view\CadastroClientes.cs">
       <SubType>Form</SubType>
     </Compile>

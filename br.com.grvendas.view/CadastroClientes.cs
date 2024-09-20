@@ -184,5 +184,10 @@ namespace GRVendas.br.com.grvendas.view
                 throw;
             }
         }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            new Helpers().limparTela(this); // Qual tela deverá ser limpa é definida pelo THIS!
+        }
     }
 }

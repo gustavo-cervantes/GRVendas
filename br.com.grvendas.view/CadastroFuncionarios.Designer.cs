@@ -35,6 +35,8 @@
             this.btnNovo = new System.Windows.Forms.Button();
             this.tbClientes = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.cbNivelAcesso = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.cbCargo = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.txtSenha = new System.Windows.Forms.TextBox();
@@ -74,8 +76,6 @@
             this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.cbNivelAcesso = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.tbClientes.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -186,6 +186,27 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Dados Pessoais";
             this.tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // cbNivelAcesso
+            // 
+            this.cbNivelAcesso.FormattingEnabled = true;
+            this.cbNivelAcesso.Items.AddRange(new object[] {
+            "Administrador",
+            "Usuário"});
+            this.cbNivelAcesso.Location = new System.Drawing.Point(628, 22);
+            this.cbNivelAcesso.Name = "cbNivelAcesso";
+            this.cbNivelAcesso.Size = new System.Drawing.Size(121, 21);
+            this.cbNivelAcesso.TabIndex = 34;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(542, 22);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(80, 17);
+            this.label4.TabIndex = 33;
+            this.label4.Text = "Autorização:";
             // 
             // cbCargo
             // 
@@ -536,7 +557,6 @@
             // dgvFuncionario
             // 
             this.dgvFuncionario.AllowUserToAddRows = false;
-            this.dgvFuncionario.AllowUserToDeleteRows = false;
             this.dgvFuncionario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvFuncionario.Location = new System.Drawing.Point(21, 72);
             this.dgvFuncionario.Name = "dgvFuncionario";
@@ -571,27 +591,6 @@
             this.panel1.Size = new System.Drawing.Size(800, 92);
             this.panel1.TabIndex = 6;
             // 
-            // cbNivelAcesso
-            // 
-            this.cbNivelAcesso.FormattingEnabled = true;
-            this.cbNivelAcesso.Items.AddRange(new object[] {
-            "Administrador",
-            "Usuário"});
-            this.cbNivelAcesso.Location = new System.Drawing.Point(628, 22);
-            this.cbNivelAcesso.Name = "cbNivelAcesso";
-            this.cbNivelAcesso.Size = new System.Drawing.Size(121, 21);
-            this.cbNivelAcesso.TabIndex = 34;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(542, 22);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(80, 17);
-            this.label4.TabIndex = 33;
-            this.label4.Text = "Autorização:";
-            // 
             // CadastroFuncionarios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -605,6 +604,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "CadastroFuncionarios";
             this.Text = "Cadastro de Funcionários";
+            this.Load += new System.EventHandler(this.CadastroFuncionarios_Load);
             this.tbClientes.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();

@@ -3,6 +3,7 @@ using GRVendas.br.com.vendas.conexao;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -68,8 +69,40 @@ namespace GRVendas.br.com.grvendas.dao
         }
         #endregion
 
-        #region 
+        #region listarFuncionarios
+        public DataTable listarFuncionarios() // Retorna uma data table, que retornará no meu DATA GRID VIEW!!!!
+        {
+            try
+            {
+                // 1- Criar o datatable e o comando SQL
 
+                DataTable tabelaFuncionario = new DataTable();
+                string sql = @"select * from tb_funcionarios";
+
+                // 2 - Organizar o comando SQL e executar
+                MySqlCommand executaCmd = new MySqlCommand(sql, conexao);
+
+                conexao.Open();
+                executaCmd.ExecuteNonQuery();
+
+                // 3 - Criar o MySqlDataAdapter ( adaptador ) e preencher os dados no datatable
+                // passando como parâmetro o comando SQL executaCmd
+
+                MySqlDataAdapter dataadapter = new MySqlDataAdapter(executaCmd);
+                dataadapter.Fill(tabelaFuncionario); // Preencher o datatable com os dados do banco de dados 
+
+                // 4 - Fechar a conexão
+                conexao.Close();
+
+                return tabelaFuncionario;
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Aconteceu o erro:" + erro);
+                return null;
+            }
+        }
         #endregion
     }
 }

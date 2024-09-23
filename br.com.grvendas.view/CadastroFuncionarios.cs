@@ -49,5 +49,11 @@ namespace GRVendas.br.com.grvendas.view
             dao.cadastrarFuncionario(obj); // PS: Obj tem os dados do funcionário.
 
         }
+
+        private void CadastroFuncionarios_Load(object sender, EventArgs e)
+        {
+            FuncionarioDAO dao = new FuncionarioDAO();
+            dgvFuncionario.DataSource = dao.listarFuncionarios();
+        }
     }
 }

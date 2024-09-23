@@ -74,7 +74,7 @@
             this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbNivelAcesso = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.tbClientes.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -120,6 +120,7 @@
             this.btnSalvar.TabIndex = 9;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnNovo
             // 
@@ -143,7 +144,7 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.comboBox1);
+            this.tabPage1.Controls.Add(this.cbNivelAcesso);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.cbCargo);
             this.tabPage1.Controls.Add(this.label3);
@@ -570,16 +571,16 @@
             this.panel1.Size = new System.Drawing.Size(800, 92);
             this.panel1.TabIndex = 6;
             // 
-            // comboBox1
+            // cbNivelAcesso
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbNivelAcesso.FormattingEnabled = true;
+            this.cbNivelAcesso.Items.AddRange(new object[] {
             "Administrador",
             "Usuário"});
-            this.comboBox1.Location = new System.Drawing.Point(628, 22);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 34;
+            this.cbNivelAcesso.Location = new System.Drawing.Point(628, 22);
+            this.cbNivelAcesso.Name = "cbNivelAcesso";
+            this.cbNivelAcesso.Size = new System.Drawing.Size(121, 21);
+            this.cbNivelAcesso.TabIndex = 34;
             // 
             // label4
             // 
@@ -664,7 +665,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbCargo;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbNivelAcesso;
         private System.Windows.Forms.Label label4;
     }
 }

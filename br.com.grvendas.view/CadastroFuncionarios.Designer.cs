@@ -33,7 +33,7 @@
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnNovo = new System.Windows.Forms.Button();
-            this.tbClientes = new System.Windows.Forms.TabControl();
+            this.tbFuncionario = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.cbNivelAcesso = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -76,7 +76,7 @@
             this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tbClientes.SuspendLayout();
+            this.tbFuncionario.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).BeginInit();
@@ -102,6 +102,7 @@
             this.btnEditar.TabIndex = 11;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnExcluir
             // 
@@ -133,15 +134,15 @@
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = false;
             // 
-            // tbClientes
+            // tbFuncionario
             // 
-            this.tbClientes.Controls.Add(this.tabPage1);
-            this.tbClientes.Controls.Add(this.tabPage2);
-            this.tbClientes.Location = new System.Drawing.Point(12, 98);
-            this.tbClientes.Name = "tbClientes";
-            this.tbClientes.SelectedIndex = 0;
-            this.tbClientes.Size = new System.Drawing.Size(775, 340);
-            this.tbClientes.TabIndex = 7;
+            this.tbFuncionario.Controls.Add(this.tabPage1);
+            this.tbFuncionario.Controls.Add(this.tabPage2);
+            this.tbFuncionario.Location = new System.Drawing.Point(12, 98);
+            this.tbFuncionario.Name = "tbFuncionario";
+            this.tbFuncionario.SelectedIndex = 0;
+            this.tbFuncionario.Size = new System.Drawing.Size(775, 340);
+            this.tbFuncionario.TabIndex = 7;
             // 
             // tabPage1
             // 
@@ -545,6 +546,7 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Consulta";
             this.tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // btnBuscar
             // 
@@ -564,6 +566,7 @@
             this.dgvFuncionario.ReadOnly = true;
             this.dgvFuncionario.Size = new System.Drawing.Size(724, 224);
             this.dgvFuncionario.TabIndex = 13;
+            this.dgvFuncionario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFuncionario_CellClick);
             // 
             // txtPesquisa
             // 
@@ -601,12 +604,12 @@
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnNovo);
-            this.Controls.Add(this.tbClientes);
+            this.Controls.Add(this.tbFuncionario);
             this.Controls.Add(this.panel1);
             this.Name = "CadastroFuncionarios";
             this.Text = "Cadastro de Funcionários";
             this.Load += new System.EventHandler(this.CadastroFuncionarios_Load);
-            this.tbClientes.ResumeLayout(false);
+            this.tbFuncionario.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
@@ -625,7 +628,7 @@
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnNovo;
-        private System.Windows.Forms.TabControl tbClientes;
+        private System.Windows.Forms.TabControl tbFuncionario;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.ComboBox cbEstado;

@@ -113,11 +113,11 @@ namespace GRVendas.br.com.grvendas.dao
         {
             try
             {
-                string sql = "UPDATE tb_funcionarios SET nome = @nome, rg = @rg, cpf = @cpf, email = @email, "
+                string sql = @"UPDATE tb_funcionarios SET nome = @nome, rg = @rg, cpf = @cpf, email = @email, "
                              + "telefone = @telefone, celular = @celular, cep = @cep, endereco = @endereco, "
                              + "numero = @numero, complemento = @complemento, bairro = @bairro, cidade = @cidade, "
                              + "estado = @estado, senha = @senha, cargo = @cargo, nivel_acesso = @nivel_acesso "
-                             + "WHERE codigo = @codigo";
+                             + "WHERE id = @id";
 
                 MySqlCommand executaCmd = new MySqlCommand(sql, conexao);
                 executaCmd.Parameters.AddWithValue("@nome", obj.Nome);
@@ -136,7 +136,8 @@ namespace GRVendas.br.com.grvendas.dao
                 executaCmd.Parameters.AddWithValue("@senha", obj.senha);
                 executaCmd.Parameters.AddWithValue("@cargo", obj.cargo);
                 executaCmd.Parameters.AddWithValue("@nivel_acesso", obj.nivel_acesso);
-                executaCmd.Parameters.AddWithValue("@codigo", obj.Codigo);
+                executaCmd.Parameters.AddWithValue("@id", obj.Codigo);
+
 
                 conexao.Open();
                 executaCmd.ExecuteNonQuery();
@@ -159,15 +160,17 @@ namespace GRVendas.br.com.grvendas.dao
             try
             {
                 // 1 - Organizar e executar o comando SQL
-                string sql = "DELETE from tb_funcionarios WHERE id = @codigo";
+                string sql = @"DELETE from tb_funcionarios WHERE id=@id"; 
                 MySqlCommand executaCmd = new MySqlCommand(sql, conexao);
 
+                // Adiciona o parâmetro @id
+                executaCmd.Parameters.AddWithValue("@id", obj.Codigo);
 
                 // 2 - Abrir conexão com o bd
                 conexao.Open();
                 executaCmd.ExecuteNonQuery();
 
-                MessageBox.Show("Funcionário alterado com sucesso!");
+                MessageBox.Show("Funcionário deletado com sucesso!");
 
                 // 3 - Fechar conexão com o bd
                 conexao.Close();

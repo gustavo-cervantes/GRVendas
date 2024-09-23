@@ -99,6 +99,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="br.com.grvendas.dao\ClienteDAO.cs" />
+    <Compile Include="br.com.grvendas.dao\FuncionarioDAO.cs" />
     <Compile Include="br.com.grvendas.model\Cliente.cs" />
     <Compile Include="br.com.grvendas.model\Funcionario.cs" />
     <Compile Include="br.com.grvendas.model\Helpers.cs" />

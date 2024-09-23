@@ -55,5 +55,10 @@ namespace GRVendas.br.com.grvendas.view
             FuncionarioDAO dao = new FuncionarioDAO();
             dgvFuncionario.DataSource = dao.listarFuncionarios();
         }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

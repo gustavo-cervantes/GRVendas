@@ -95,7 +95,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(800, 92);
             this.panel1.TabIndex = 7;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // btnEditar
             // 
@@ -123,6 +122,7 @@
             this.btnSalvar.TabIndex = 14;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // btnNovo
             // 
@@ -509,7 +509,6 @@
             this.Controls.Add(this.panel1);
             this.Name = "CadastroFornecedor";
             this.Text = "Cadastro de Fornecedores";
-            this.Load += new System.EventHandler(this.CadastroFornecedor_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.tbFornecedor.ResumeLayout(false);

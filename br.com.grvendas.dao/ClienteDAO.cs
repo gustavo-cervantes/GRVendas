@@ -272,7 +272,7 @@ namespace GRVendas.br.com.grvendas.dao
                 // 1- Criar o datatable e o comando SQL
 
                 DataTable tabelacliente = new DataTable();
-                string sql = @"select * from tb_clientes where nome like @nome";
+                string sql = @"SELECT * FROM tb_clientes where nome like @nome";
 
                 // 2 - Organizar o comando SQL e executar
                 MySqlCommand executaCmd = new MySqlCommand(sql, conexao);

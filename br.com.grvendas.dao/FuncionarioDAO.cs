@@ -14,16 +14,16 @@ namespace GRVendas.br.com.grvendas.dao
 {
     public class FuncionarioDAO
     {
-        private MySqlConnection conexao;
+        private MySqlConnection Conexao;
 
 
         public FuncionarioDAO()
         {
-            this.conexao = new ConnectionFactory().getconnection(); // Instanciando a conexão com o banco de dados
+            this.Conexao = new ConnectionFactory().getconnection(); // Instanciando a conexão com o banco de dados
         }
 
         #region Cadastrar Funcionário
-        public void cadastrarFuncionario(Funcionario obj)
+        public void CadastrarFuncionario(Funcionario obj)
         {
             try
             {
@@ -33,7 +33,7 @@ namespace GRVendas.br.com.grvendas.dao
 
                 // 2 - Organizar e executar o comando SQL
 
-                MySqlCommand executaCmd = new MySqlCommand(sql, conexao);
+                MySqlCommand executaCmd = new MySqlCommand(sql, Conexao);
                 executaCmd.Parameters.AddWithValue("@nome", obj.Nome);
                 executaCmd.Parameters.AddWithValue("@rg", obj.Rg);
                 executaCmd.Parameters.AddWithValue("@cpf", obj.Cpf);
@@ -47,19 +47,19 @@ namespace GRVendas.br.com.grvendas.dao
                 executaCmd.Parameters.AddWithValue("@bairro", obj.Bairro);
                 executaCmd.Parameters.AddWithValue("@cidade", obj.Cidade);
                 executaCmd.Parameters.AddWithValue("@estado", obj.Estado);
-                executaCmd.Parameters.AddWithValue("@senha", obj.senha);
-                executaCmd.Parameters.AddWithValue("@cargo", obj.cargo);
-                executaCmd.Parameters.AddWithValue("@nivel_acesso", obj.nivel_acesso);
+                executaCmd.Parameters.AddWithValue("@senha", obj.Senha);
+                executaCmd.Parameters.AddWithValue("@cargo", obj.Cargo);
+                executaCmd.Parameters.AddWithValue("@nivel_acesso", obj.NivelAcesso);
 
 
                 // 3 - Abrir a conexão com o banco de dados e executar o comando SQL
-                conexao.Open();
+                Conexao.Open();
                 executaCmd.ExecuteNonQuery();
 
                 MessageBox.Show("Funcionario cadastrado com sucesso!");
 
                 // 4 - Fechar a conexão
-                conexao.Close();
+                Conexao.Close();
 
             }
             catch (Exception erro)
@@ -71,7 +71,7 @@ namespace GRVendas.br.com.grvendas.dao
         #endregion
 
         #region listarFuncionarios
-        public DataTable listarFuncionarios() // Retorna uma data table, que retornará no meu DATA GRID VIEW!!!!
+        public DataTable ListarFuncionarios() // Retorna uma data table, que retornará no meu DATA GRID VIEW!!!!
         {
             try
             {
@@ -81,9 +81,9 @@ namespace GRVendas.br.com.grvendas.dao
                 string sql = @"SELECT * from tb_funcionarios";
 
                 // 2 - Organizar o comando SQL e executar
-                MySqlCommand executaCmd = new MySqlCommand(sql, conexao);
+                MySqlCommand executaCmd = new MySqlCommand(sql, Conexao);
 
-                conexao.Open();
+                Conexao.Open();
                 executaCmd.ExecuteNonQuery();
 
                 // 3 - Criar o MySqlDataAdapter ( adaptador ) e preencher os dados no datatable
@@ -93,7 +93,7 @@ namespace GRVendas.br.com.grvendas.dao
                 dataadapter.Fill(tabelaFuncionario); // Preencher o datatable com os dados do banco de dados 
 
                 // 4 - Fechar a conexão
-                conexao.Close();
+                Conexao.Close();
 
                 return tabelaFuncionario;
 
@@ -109,7 +109,7 @@ namespace GRVendas.br.com.grvendas.dao
         #endregion
 
         #region alterarFuncionario
-        public void alterarFuncionario(Funcionario obj)
+        public void AlterarFuncionario(Funcionario obj)
         {
             try
             {
@@ -117,9 +117,9 @@ namespace GRVendas.br.com.grvendas.dao
                              + "telefone = @telefone, celular = @celular, cep = @cep, endereco = @endereco, "
                              + "numero = @numero, complemento = @complemento, bairro = @bairro, cidade = @cidade, "
                              + "estado = @estado, senha = @senha, cargo = @cargo, nivel_acesso = @nivel_acesso "
-                             + "WHERE id = @id";
+                             + "WHERE id = @codigo";
 
-                MySqlCommand executaCmd = new MySqlCommand(sql, conexao);
+                MySqlCommand executaCmd = new MySqlCommand(sql, Conexao);
                 executaCmd.Parameters.AddWithValue("@nome", obj.Nome);
                 executaCmd.Parameters.AddWithValue("@rg", obj.Rg);
                 executaCmd.Parameters.AddWithValue("@cpf", obj.Cpf);
@@ -133,18 +133,18 @@ namespace GRVendas.br.com.grvendas.dao
                 executaCmd.Parameters.AddWithValue("@bairro", obj.Bairro);
                 executaCmd.Parameters.AddWithValue("@cidade", obj.Cidade);
                 executaCmd.Parameters.AddWithValue("@estado", obj.Estado);
-                executaCmd.Parameters.AddWithValue("@senha", obj.senha);
-                executaCmd.Parameters.AddWithValue("@cargo", obj.cargo);
-                executaCmd.Parameters.AddWithValue("@nivel_acesso", obj.nivel_acesso);
+                executaCmd.Parameters.AddWithValue("@senha", obj.Senha);
+                executaCmd.Parameters.AddWithValue("@cargo", obj.Cargo);
+                executaCmd.Parameters.AddWithValue("@nivel_acesso", obj.NivelAcesso);
                 executaCmd.Parameters.AddWithValue("@id", obj.Codigo);
 
 
-                conexao.Open();
+                Conexao.Open();
                 executaCmd.ExecuteNonQuery();
 
                 MessageBox.Show("Funcionário alterado com sucesso!");
 
-                conexao.Close();
+                Conexao.Close();
             }
             catch (Exception erro)
             {
@@ -154,26 +154,26 @@ namespace GRVendas.br.com.grvendas.dao
         }
         #endregion
 
-        #region excluirFuncionario
-        public void deletarFuncionario(Funcionario obj)
+        #region deletarFuncionario
+        public void DeletarFuncionario(Funcionario obj)
         {
             try
             {
                 // 1 - Organizar e executar o comando SQL
                 string sql = @"DELETE from tb_funcionarios WHERE id=@id"; 
-                MySqlCommand executaCmd = new MySqlCommand(sql, conexao);
+                MySqlCommand executaCmd = new MySqlCommand(sql, Conexao);
 
                 // Adiciona o parâmetro @id
                 executaCmd.Parameters.AddWithValue("@id", obj.Codigo);
 
                 // 2 - Abrir conexão com o bd
-                conexao.Open();
+                Conexao.Open();
                 executaCmd.ExecuteNonQuery();
 
                 MessageBox.Show("Funcionário deletado com sucesso!");
 
                 // 3 - Fechar conexão com o bd
-                conexao.Close();
+                Conexao.Close();
             }
             catch (Exception erro)
             {
@@ -182,6 +182,48 @@ namespace GRVendas.br.com.grvendas.dao
             }
         }
         #endregion
+
+        #region BuscarFuncionariosPorNome
+        public DataTable BuscarFuncionariosPorNome(string Nome) // Retorna uma data table, que retornará no meu DATA GRID VIEW!!!!
+        {
+            try
+            {
+                // 1- Criar o datatable e o comando SQL
+
+                DataTable tabelaFuncionario = new DataTable();
+                string sql = @"SELECT * from tb_funcionarios where nome = @nome";
+
+                // 2 - Organizar o comando SQL e executar
+                MySqlCommand executaCmd = new MySqlCommand(sql, Conexao);
+                executaCmd.Parameters.AddWithValue("@nome", Nome);
+
+                Conexao.Open();
+                executaCmd.ExecuteNonQuery();
+
+                // 3 - Criar o MySqlDataAdapter ( adaptador ) e preencher os dados no datatable
+                // passando como parâmetro o comando SQL executaCmd
+
+                MySqlDataAdapter dataadapter = new MySqlDataAdapter(executaCmd);
+                dataadapter.Fill(tabelaFuncionario); // Preencher o datatable com os dados do banco de dados 
+
+                // 4 - Fechar a conexão
+                Conexao.Close();
+
+                return tabelaFuncionario;
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Aconteceu o erro:" + erro);
+                return null;
+            }
+
+        }
+        #endregion
+
+
+
+
 
 
     }

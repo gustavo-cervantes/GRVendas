@@ -72,14 +72,14 @@
             this.label7 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.dgvFuncionario = new System.Windows.Forms.DataGridView();
+            this.dgvColab = new System.Windows.Forms.DataGridView();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tbFuncionario.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvColab)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -90,9 +90,9 @@
             this.label1.ForeColor = System.Drawing.Color.White;
             this.label1.Location = new System.Drawing.Point(32, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(241, 26);
+            this.label1.Size = new System.Drawing.Size(259, 26);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Cadastro de Funcionários";
+            this.label1.Text = "Cadastro de Colaboradores";
             // 
             // btnEditar
             // 
@@ -536,7 +536,7 @@
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.btnBuscar);
-            this.tabPage2.Controls.Add(this.dgvFuncionario);
+            this.tabPage2.Controls.Add(this.dgvColab);
             this.tabPage2.Controls.Add(this.txtPesquisa);
             this.tabPage2.Controls.Add(this.label21);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -556,17 +556,18 @@
             this.btnBuscar.TabIndex = 14;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // dgvFuncionario
+            // dgvColab
             // 
-            this.dgvFuncionario.AllowUserToAddRows = false;
-            this.dgvFuncionario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFuncionario.Location = new System.Drawing.Point(21, 72);
-            this.dgvFuncionario.Name = "dgvFuncionario";
-            this.dgvFuncionario.ReadOnly = true;
-            this.dgvFuncionario.Size = new System.Drawing.Size(724, 224);
-            this.dgvFuncionario.TabIndex = 13;
-            this.dgvFuncionario.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFuncionario_CellClick);
+            this.dgvColab.AllowUserToAddRows = false;
+            this.dgvColab.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvColab.Location = new System.Drawing.Point(21, 72);
+            this.dgvColab.Name = "dgvColab";
+            this.dgvColab.ReadOnly = true;
+            this.dgvColab.Size = new System.Drawing.Size(724, 224);
+            this.dgvColab.TabIndex = 13;
+            this.dgvColab.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvColab_CellContentClick);
             // 
             // txtPesquisa
             // 
@@ -614,7 +615,7 @@
             this.tabPage1.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvFuncionario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvColab)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -661,7 +662,7 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.DataGridView dgvFuncionario;
+        private System.Windows.Forms.DataGridView dgvColab;
         private System.Windows.Forms.TextBox txtPesquisa;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Panel panel1;

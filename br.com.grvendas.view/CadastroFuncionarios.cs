@@ -40,16 +40,16 @@ namespace GRVendas.br.com.grvendas.view
             obj.Bairro = txtBairro.Text;
             obj.Cidade = txtCidade.Text;
             obj.Estado = cbEstado.Text;
-            obj.senha = txtSenha.Text;
-            obj.cargo = cbCargo.Text;
-            obj.nivel_acesso = cbNivelAcesso.SelectedItem.ToString(); // Converte o item selecionado para string
+            obj.Senha = txtSenha.Text;
+            obj.Cargo = cbCargo.Text;
+            obj.NivelAcesso = cbNivelAcesso.SelectedItem.ToString(); // Converte o item selecionado para string
 
             // 3 - Instanciar a classe FuncionarioDAO
             FuncionarioDAO dao = new FuncionarioDAO();
-            dao.cadastrarFuncionario(obj); // PS: Obj tem os dados do funcionário.
+            dao.CadastrarFuncionario(obj); // PS: Obj tem os dados do funcionário.
 
             // Recarrega a dgv
-            dgvFuncionario.DataSource = dao.listarFuncionarios();
+            dgvColab.DataSource = dao.ListarFuncionarios();
 
         }
 
@@ -58,7 +58,7 @@ namespace GRVendas.br.com.grvendas.view
             FuncionarioDAO dao = new FuncionarioDAO();
 
             // Recarrega o data grid view
-            dgvFuncionario.DataSource = dao.listarFuncionarios();
+            dgvColab.DataSource = dao.ListarFuncionarios();
 
 
         }
@@ -70,39 +70,16 @@ namespace GRVendas.br.com.grvendas.view
             obj.Codigo = int.Parse(txtCodigo.Text);
 
             FuncionarioDAO dao = new FuncionarioDAO();
-            dao.deletarFuncionario(obj);
+            dao.DeletarFuncionario(obj);
 
             // Recarrega o data grid view
-            dgvFuncionario.DataSource = dao.listarFuncionarios();
+            dgvColab.DataSource = dao.ListarFuncionarios();
 
-        }
-
-        private void dgvFuncionario_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            txtCodigo.Text = dgvFuncionario.CurrentRow.Cells[0].Value.ToString();
-            txtNome.Text = dgvFuncionario.CurrentRow.Cells[1].Value.ToString();
-            txtRg.Text = dgvFuncionario.CurrentRow.Cells[2].Value.ToString();
-            txtCpf.Text = dgvFuncionario.CurrentRow.Cells[3].Value.ToString();
-            txtEmail.Text = dgvFuncionario.CurrentRow.Cells[4].Value.ToString();
-            txtTelefone.Text = dgvFuncionario.CurrentRow.Cells[8].Value.ToString();
-            txtCelular.Text = dgvFuncionario.CurrentRow.Cells[9].Value.ToString();
-            txtCep.Text = dgvFuncionario.CurrentRow.Cells[10].Value.ToString();
-            txtEndereco.Text = dgvFuncionario.CurrentRow.Cells[11].Value.ToString();
-            txtNumero.Text = dgvFuncionario.CurrentRow.Cells[12].Value.ToString();
-            txtComplemento.Text = dgvFuncionario.CurrentRow.Cells[13].Value.ToString();
-            txtBairro.Text = dgvFuncionario.CurrentRow.Cells[14].Value.ToString();
-            txtCidade.Text = dgvFuncionario.CurrentRow.Cells[15].Value.ToString();
-            cbEstado.Text = dgvFuncionario.CurrentRow.Cells[16].Value.ToString();
-            txtSenha.Text = dgvFuncionario.CurrentRow.Cells[5].Value.ToString();
-            cbCargo.Text = dgvFuncionario.CurrentRow.Cells[6].Value.ToString();
-            cbNivelAcesso.Text = dgvFuncionario.CurrentRow.Cells[7].Value.ToString();
-
-            tbFuncionario.SelectedTab = tabPage1;
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -126,13 +103,51 @@ namespace GRVendas.br.com.grvendas.view
             obj.Bairro = txtBairro.Text;
             obj.Cidade = txtCidade.Text;
             obj.Estado = cbEstado.Text;
-            obj.senha = txtSenha.Text;
-            obj.cargo = cbCargo.Text;
+            obj.Senha = txtSenha.Text;
+            obj.Cargo = cbCargo.Text;
             obj.Codigo = int.Parse(txtCodigo.Text); // Para fazer alteração é necessario o código
 
             // 3 - Instanciar a classe FuncionarioDAO
             FuncionarioDAO dao = new FuncionarioDAO();
-            dao.alterarFuncionario(obj); // PS: Obj tem os dados do funcionário.
+            dao.AlterarFuncionario(obj); // PS: Obj tem os dados do funcionário.
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string Nome = txtPesquisa.Text;
+
+            FuncionarioDAO dao = new FuncionarioDAO(); // Instanciar a classe DAO 
+
+            dgvColab.DataSource = dao.BuscarFuncionariosPorNome(Nome);
+
+            if (dgvColab.Rows.Count == 0 || txtPesquisa.Text == string.Empty) // Se a busca for vazia, recarregar o grid
+            {
+                MessageBox.Show("Funcionário não encontrado!");
+                dgvColab.DataSource = dao.ListarFuncionarios();
+            }
+        }
+
+        private void dgvColab_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtCodigo.Text = dgvColab.CurrentRow.Cells[0].Value.ToString();
+            txtNome.Text = dgvColab.CurrentRow.Cells[1].Value.ToString();
+            txtRg.Text = dgvColab.CurrentRow.Cells[2].Value.ToString();
+            txtCpf.Text = dgvColab.CurrentRow.Cells[3].Value.ToString();
+            txtEmail.Text = dgvColab.CurrentRow.Cells[4].Value.ToString();
+            txtTelefone.Text = dgvColab.CurrentRow.Cells[8].Value.ToString();
+            txtCelular.Text = dgvColab.CurrentRow.Cells[9].Value.ToString();
+            txtCep.Text = dgvColab.CurrentRow.Cells[10].Value.ToString();
+            txtEndereco.Text = dgvColab.CurrentRow.Cells[11].Value.ToString();
+            txtNumero.Text = dgvColab.CurrentRow.Cells[12].Value.ToString();
+            txtComplemento.Text = dgvColab.CurrentRow.Cells[13].Value.ToString();
+            txtBairro.Text = dgvColab.CurrentRow.Cells[14].Value.ToString();
+            txtCidade.Text = dgvColab.CurrentRow.Cells[15].Value.ToString();
+            cbEstado.Text = dgvColab.CurrentRow.Cells[16].Value.ToString();
+            txtSenha.Text = dgvColab.CurrentRow.Cells[5].Value.ToString();
+            cbCargo.Text = dgvColab.CurrentRow.Cells[6].Value.ToString();
+            cbNivelAcesso.Text = dgvColab.CurrentRow.Cells[7].Value.ToString();
+
+            tbFuncionario.SelectedTab = tabPage1;
         }
     }
 }

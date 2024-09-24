@@ -149,5 +149,15 @@ namespace GRVendas.br.com.grvendas.view
 
             tbFuncionario.SelectedTab = tabPage1;
         }
+
+        private void txtPesquisa_TextChanged(object sender, EventArgs e)
+        {
+            string Nome = "%" + txtPesquisa.Text + "%";
+
+            FuncionarioDAO dao = new FuncionarioDAO(); // Instanciar a classe DAO
+            {
+                dgvColab.DataSource = dao.ListarFuncionariosPorNome(Nome);
+            }
+        }
     }
 }

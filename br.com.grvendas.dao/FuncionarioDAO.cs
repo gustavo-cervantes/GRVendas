@@ -221,6 +221,46 @@ namespace GRVendas.br.com.grvendas.dao
         }
         #endregion
 
+        #region ListarFuncionariosPorNome
+
+        public DataTable ListarFuncionariosPorNome(string Nome) // Retorna uma data table, que retornará no meu DATA GRID VIEW!!!!
+        {
+            try
+            {
+                // 1- Criar o datatable e o comando SQL
+
+                DataTable tabelaFuncionario = new DataTable();
+                string sql = @"SELECT * from tb_funcionarios where nome like @nome";
+
+                // 2 - Organizar o comando SQL e executar
+                MySqlCommand executaCmd = new MySqlCommand(sql, Conexao);
+                executaCmd.Parameters.AddWithValue("@nome", Nome);
+
+                Conexao.Open();
+                executaCmd.ExecuteNonQuery();
+
+                // 3 - Criar o MySqlDataAdapter ( adaptador ) e preencher os dados no datatable
+                // passando como parâmetro o comando SQL executaCmd
+
+                MySqlDataAdapter dataadapter = new MySqlDataAdapter(executaCmd);
+                dataadapter.Fill(tabelaFuncionario); // Preencher o datatable com os dados do banco de dados 
+
+                // 4 - Fechar a conexão
+                Conexao.Close();
+
+                return tabelaFuncionario;
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Aconteceu o erro:" + erro);
+                return null;
+            }
+
+        }
+
+        #endregion
+
 
 
 

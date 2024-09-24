@@ -575,6 +575,7 @@
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(192, 20);
             this.txtPesquisa.TabIndex = 12;
+            this.txtPesquisa.TextChanged += new System.EventHandler(this.txtPesquisa_TextChanged);
             // 
             // label21
             // 
@@ -608,7 +609,7 @@
             this.Controls.Add(this.tbFuncionario);
             this.Controls.Add(this.panel1);
             this.Name = "CadastroFuncionarios";
-            this.Text = "Cadastro de Funcionários";
+            this.Text = "Cadastro de Colaboradores";
             this.Load += new System.EventHandler(this.CadastroFuncionarios_Load);
             this.tbFuncionario.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

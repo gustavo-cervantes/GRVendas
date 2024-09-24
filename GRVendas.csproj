@@ -110,6 +110,12 @@
       <DependentUpon>CadastroClientes.cs</DependentUpon>
     </Compile>
     <Compile Include="br.com.grvendas.conexao\ConnectionFactory.cs" />
+    <Compile Include="br.com.grvendas.view\CadastroFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="br.com.grvendas.view\CadastroFornecedor.Designer.cs">
+      <DependentUpon>CadastroFornecedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="br.com.grvendas.view\CadastroFuncionarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -126,6 +132,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="br.com.grvendas.view\CadastroClientes.resx">
       <DependentUpon>CadastroClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="br.com.grvendas.view\CadastroFornecedor.resx">
+      <DependentUpon>CadastroFornecedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="br.com.grvendas.view\CadastroFuncionarios.resx">
       <DependentUpon>CadastroFuncionarios.cs</DependentUpon>

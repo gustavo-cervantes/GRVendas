@@ -451,7 +451,7 @@
             // txtCpf
             // 
             this.txtCpf.Location = new System.Drawing.Point(395, 129);
-            this.txtCpf.Mask = "###.###.###-##";
+            this.txtCpf.Mask = "###,###,###-##";
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(100, 20);
             this.txtCpf.TabIndex = 9;
@@ -469,7 +469,7 @@
             // txtRg
             // 
             this.txtRg.Location = new System.Drawing.Point(392, 90);
-            this.txtRg.Mask = "##.###.##-##";
+            this.txtRg.Mask = "##,###,##-##";
             this.txtRg.Name = "txtRg";
             this.txtRg.Size = new System.Drawing.Size(100, 20);
             this.txtRg.TabIndex = 7;

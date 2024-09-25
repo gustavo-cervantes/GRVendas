@@ -3,6 +3,7 @@ using GRVendas.br.com.vendas.conexao;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -60,6 +61,41 @@ namespace GRVendas.br.com.grvendas.dao
                 throw;
             }
         }
-        #endregion 
+        #endregion
+
+        #region ListarFornecedores
+        public DataTable listarFornecedores()
+        {
+            try
+            {
+                // 1- Criar o datatable e o comando SQL
+
+                DataTable tabelafornecedores = new DataTable(); // Criação do datatable
+                string sql = @"select * from tb_fornecedores";
+
+                // 2 - Organizar o comando SQL e executar
+                MySqlCommand executaCmd = new MySqlCommand(sql, conexao);
+                conexao.Open();
+                executaCmd.ExecuteNonQuery();
+
+                // 3 - Criar o MySqlDataAdapter ( adaptador ) e preencher os dados no datatable
+                // passando como parâmetro o comando SQL executaCmd
+
+                MySqlDataAdapter dataadapter = new MySqlDataAdapter(executaCmd);
+                dataadapter.Fill(tabelafornecedores); // Preencher o datatable com os dados do banco de dados 
+
+                // 4 - Fechar a conexão
+                conexao.Close();
+
+                return tabelafornecedores;
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Aconteceu o erro:" + erro);
+                return null;
+            }
+        }
+        #endregion
     }
 }

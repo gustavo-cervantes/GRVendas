@@ -74,9 +74,15 @@ namespace GRVendas.br.com.grvendas.view
             dao.CadastrarFornecedor(obj);
 
             // Carregar o datagrid view dos fornecedores
+            dgvFornecedor.DataSource = dao.listarFornecedores();
+        }
 
+        private void CadastroFornecedor_Load(object sender, EventArgs e)
+        {
+            // 1 - Listar todos os fornecedores
 
-
+            FornecedorDAO dao = new dao.FornecedorDAO();
+            dgvFornecedor.DataSource = dao.listarFornecedores();
         }
     }
 }

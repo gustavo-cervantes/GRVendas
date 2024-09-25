@@ -104,6 +104,7 @@
             this.btnEditar.TabIndex = 16;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnExcluir
             // 
@@ -113,6 +114,7 @@
             this.btnExcluir.TabIndex = 15;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnSalvar
             // 
@@ -478,6 +480,7 @@
             this.dgvFornecedor.ReadOnly = true;
             this.dgvFornecedor.Size = new System.Drawing.Size(724, 224);
             this.dgvFornecedor.TabIndex = 13;
+            this.dgvFornecedor.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFornecedor_CellContentClick);
             // 
             // txtPesquisa
             // 

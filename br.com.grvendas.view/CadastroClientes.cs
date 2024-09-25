@@ -115,14 +115,13 @@ namespace GRVendas.br.com.grvendas.view
 
             obj.Codigo = int.Parse(txtCodigo.Text);
 
-
-            // 2 - Criar um da classe DAO e chamar o método de cadastrarCliente
+            // 2 - Criação da classe DAO e chamar o método de cadastrarCliente
             ClienteDAO dao = new ClienteDAO();
             dao.editarCliente(obj);
 
             // 3 - Atualizar o grid de clientes
             dgvCliente.DataSource = dao.listarClientes();
-
+            
         }
 
         private void btnBuscar_Click(object sender, EventArgs e)

@@ -84,5 +84,64 @@ namespace GRVendas.br.com.grvendas.view
             FornecedorDAO dao = new dao.FornecedorDAO();
             dgvFornecedor.DataSource = dao.listarFornecedores();
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            Fornecedor obj = new Fornecedor();
+            obj.Nome = txtNome.Text;
+            obj.Cnpj = txtCnpj.Text;
+            obj.Email = txtEmail.Text;
+            obj.Telefone = txtTelefone.Text;
+            obj.Celular = txtCelular.Text;
+            obj.Cep = txtCep.Text;
+            obj.Endereco = txtEndereco.Text;
+            obj.Numero = int.Parse(txtNumero.Text);
+            obj.Complemento = txtComplemento.Text;
+            obj.Bairro = txtBairro.Text;
+            obj.Cidade = txtCidade.Text;
+            obj.Estado = cbEstado.Text;
+
+            obj.Codigo = int.Parse(txtCodigo.Text);
+
+            // 2 - Criação da classe DAO e chamar o método de editarFornecedor
+            FornecedorDAO dao = new FornecedorDAO();
+            dao.EditarFornecedor(obj);
+
+            // 3 - Atualizar o grid de fornecedores
+            dgvFornecedor.DataSource = dao.listarFornecedores();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            // 1 - Botão excluir
+
+            Fornecedor obj = new Fornecedor();
+            obj.Codigo = int.Parse(txtCodigo.Text);
+
+            FornecedorDAO dao = new FornecedorDAO();
+            dao.DeletarFornecedor(obj);
+
+            // 2 - Recarrega o gridview
+            dgvFornecedor.DataSource = dao.listarFornecedores();
+        }
+
+        private void dgvFornecedor_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtCodigo.Text = dgvFornecedor.Rows[e.RowIndex].Cells[0].Value.ToString();
+            txtNome.Text = dgvFornecedor.Rows[e.RowIndex].Cells[1].Value.ToString();
+            txtCnpj.Text = dgvFornecedor.Rows[e.RowIndex].Cells[2].Value.ToString();
+            txtEmail.Text = dgvFornecedor.Rows[e.RowIndex].Cells[3].Value.ToString();
+            txtTelefone.Text = dgvFornecedor.Rows[e.RowIndex].Cells[4].Value.ToString();
+            txtCelular.Text = dgvFornecedor.Rows[e.RowIndex].Cells[5].Value.ToString();
+            txtCep.Text = dgvFornecedor.Rows[e.RowIndex].Cells[6].Value.ToString();
+            txtEndereco.Text = dgvFornecedor.Rows[e.RowIndex].Cells[7].Value.ToString();
+            txtNumero.Text = dgvFornecedor.Rows[e.RowIndex].Cells[8].Value.ToString();
+            txtComplemento.Text = dgvFornecedor.Rows[e.RowIndex].Cells[9].Value.ToString();
+            txtBairro.Text = dgvFornecedor.Rows[e.RowIndex].Cells[10].Value.ToString();
+            txtCidade.Text = dgvFornecedor.Rows[e.RowIndex].Cells[11].Value.ToString();
+            cbEstado.Text = dgvFornecedor.Rows[e.RowIndex].Cells[12].Value.ToString();
+
+            tbFornecedor.SelectedTab = tabPage1;
+        }
     }
 }

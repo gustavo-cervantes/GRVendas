@@ -103,13 +103,12 @@ namespace GRVendas.br.com.grvendas.dao
         {
             try
             {
-                string sql = @"UPDATE tb_fornecedor SET nome=@nome, rg=@rg, cpf=@cpf, email=@email, telefone=@telefone, celular=@celular, cep=@cep, endereco=@endereco, numero=@numero, complemento=@complemento, bairro=@bairro, cidade=@cidade, estado=@estado 
+                string sql = @"UPDATE tb_fornecedores SET nome=@nome, cnpj=@cnpj, email=@email, telefone=@telefone, celular=@celular, cep=@cep, endereco=@endereco, numero=@numero, complemento=@complemento, bairro=@bairro, cidade=@cidade, estado=@estado 
                 where id=@id";
 
                 MySqlCommand executaCmd = new MySqlCommand(sql, conexao);
                 executaCmd.Parameters.AddWithValue("@nome", obj.Nome);
-                executaCmd.Parameters.AddWithValue("@rg", obj.Rg);
-                executaCmd.Parameters.AddWithValue("@cpf", obj.Cpf);
+                executaCmd.Parameters.AddWithValue("@cnpj", obj.Cnpj);
                 executaCmd.Parameters.AddWithValue("@email", obj.Email);
                 executaCmd.Parameters.AddWithValue("@telefone", obj.Telefone);
                 executaCmd.Parameters.AddWithValue("@celular", obj.Celular);
@@ -126,6 +125,8 @@ namespace GRVendas.br.com.grvendas.dao
                 executaCmd.ExecuteNonQuery();
 
                 MessageBox.Show("Dados alterados com sucesso");
+                conexao.Close();
+
             }
             catch (Exception erro)
             {

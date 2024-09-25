@@ -75,6 +75,8 @@ namespace GRVendas.br.com.grvendas.view
 
             // Carregar o datagrid view dos fornecedores
             dgvFornecedor.DataSource = dao.listarFornecedores();
+
+            new Helpers().limparTela(this);
         }
 
         private void CadastroFornecedor_Load(object sender, EventArgs e)
@@ -109,6 +111,8 @@ namespace GRVendas.br.com.grvendas.view
 
             // 3 - Atualizar o grid de fornecedores
             dgvFornecedor.DataSource = dao.listarFornecedores();
+
+            new Helpers().limparTela(this);
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
@@ -123,6 +127,8 @@ namespace GRVendas.br.com.grvendas.view
 
             // 2 - Recarrega o gridview
             dgvFornecedor.DataSource = dao.listarFornecedores();
+
+            new Helpers().limparTela(this);
         }
 
         private void dgvFornecedor_CellContentClick(object sender, DataGridViewCellEventArgs e)

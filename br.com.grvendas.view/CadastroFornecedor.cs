@@ -149,5 +149,34 @@ namespace GRVendas.br.com.grvendas.view
 
             tbFornecedor.SelectedTab = tabPage1;
         }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string nome = txtPesquisa.Text;
+
+            FornecedorDAO dao = new FornecedorDAO(); // Instanciar a classe DAO 
+
+            dgvFornecedor.DataSource = dao.BuscarFornecedoresPorNome(nome);
+
+            if (dgvFornecedor.Rows.Count == 0) // Se a busca for vazia, recarregar o grid
+            {
+                MessageBox.Show("Nenhum fornecedor encontrado com este nome.");
+                dgvFornecedor.DataSource = dao.listarFornecedores();
+            }
+        }
+
+        private void txtPesquisa_TextChanged(object sender, EventArgs e)
+        {
+            string nome = "%" + txtPesquisa.Text + "%";
+
+            FornecedorDAO dao = new FornecedorDAO(); // Instanciar a classe DAO 
+
+            dgvFornecedor.DataSource = dao.ListarFornecedoresPorNome(nome);
+
+            if (dgvFornecedor.Rows.Count == 0) // Se a busca for vazia, recarregar o grid
+            {
+                dgvFornecedor.DataSource = dao.listarFornecedores();
+            }
+        }   
     }
 }

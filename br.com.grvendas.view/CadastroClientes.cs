@@ -188,5 +188,6 @@ namespace GRVendas.br.com.grvendas.view
         {
             new Helpers().limparTela(this); // Qual tela deverá ser limpa é definida pelo THIS!
         }
+
     }
 }

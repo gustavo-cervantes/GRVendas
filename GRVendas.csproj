@@ -101,10 +101,12 @@
     <Compile Include="br.com.grvendas.dao\ClienteDAO.cs" />
     <Compile Include="br.com.grvendas.dao\FornecedorDAO.cs" />
     <Compile Include="br.com.grvendas.dao\FuncionarioDAO.cs" />
+    <Compile Include="br.com.grvendas.dao\ProdutosDAO.cs" />
     <Compile Include="br.com.grvendas.model\Cliente.cs" />
     <Compile Include="br.com.grvendas.model\Fornecedor.cs" />
     <Compile Include="br.com.grvendas.model\Funcionario.cs" />
     <Compile Include="br.com.grvendas.model\Helpers.cs" />
+    <Compile Include="br.com.grvendas.model\Produtos.cs" />
     <Compile Include="br.com.grvendas.view\CadastroClientes.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +125,12 @@
     </Compile>
     <Compile Include="br.com.grvendas.view\CadastroFuncionarios.Designer.cs">
       <DependentUpon>CadastroFuncionarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="br.com.grvendas.view\CadastroProdutos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="br.com.grvendas.view\CadastroProdutos.Designer.cs">
+      <DependentUpon>CadastroProdutos.cs</DependentUpon>
     </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

@@ -51,6 +51,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.cbFornecedor = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tbProdutos.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -128,6 +129,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.cbFornecedor);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.txtEstoque);
@@ -283,6 +285,16 @@
             this.cbFornecedor.Size = new System.Drawing.Size(121, 21);
             this.cbFornecedor.TabIndex = 11;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(242, 140);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 12;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // CadastroProdutos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -334,5 +346,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbFornecedor;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button1;
     }
 }

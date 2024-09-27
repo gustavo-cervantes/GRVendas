@@ -31,5 +31,10 @@ namespace GRVendas.br.com.grvendas.view
             cbFornecedor.DisplayMember = "nome"; // Passará o nome do fornecedor para o combobox
             cbFornecedor.ValueMember = "id"; // Passará o código do fornecedor para o combobox
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Valor do combobox: " + cbFornecedor.SelectedValue);
+        }
     }
 }

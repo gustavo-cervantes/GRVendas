@@ -17,7 +17,7 @@ namespace GRVendas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CadastroFornecedor());
+            Application.Run(new CadastroProdutos());
         }
     }
 }

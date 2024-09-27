@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GRVendas.br.com.grvendas.dao;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,20 @@ namespace GRVendas.br.com.grvendas.view
         public CadastroProdutos()
         {
             InitializeComponent();
+        }
+
+        private void btnPesquisar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void CadastroProdutos_Load(object sender, EventArgs e)
+        {
+            FornecedorDAO F_dao = new FornecedorDAO(); 
+
+            cbFornecedor.DataSource = F_dao.listarFornecedores();
+            cbFornecedor.DisplayMember = "nome"; // Passará o nome do fornecedor para o combobox
+            cbFornecedor.ValueMember = "id"; // Passará o código do fornecedor para o combobox
         }
     }
 }

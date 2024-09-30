@@ -28,9 +28,19 @@ namespace GRVendas.br.com.grvendas.dao
 
                 string sql = "insert into produtos (descricao, preco, qtd_estoque, for_id) values (@descricao, @preco, @qtd_estoque, @for_id)";
 
-                // 2- Executa o comando SQL
+                // 2 - Organizar o comando SQL
 
-                MySqlCommand cmd = new MySqlCommand(sql, conexao);
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@descricao",obj.Descricao);
+                executacmd.Parameters.AddWithValue("@preco", obj.Preco);
+                executacmd.Parameters.AddWithValue("@qtd_estoque", obj.QtdEstoque);
+                executacmd.Parameters.AddWithValue("@for_id", obj.for_id);
+
+                // 3 - Executa o comando SQL
+
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+                conexao.Close();
             }
             catch (Exception erro)
             {
@@ -40,4 +50,5 @@ namespace GRVendas.br.com.grvendas.dao
         }
         #endregion
     }
+
 }

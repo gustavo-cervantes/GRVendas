@@ -36,5 +36,10 @@ namespace GRVendas.br.com.grvendas.view
         {
             MessageBox.Show("Valor do combobox: " + cbFornecedor.SelectedValue);
         }
+
+        private void btnSalvar_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

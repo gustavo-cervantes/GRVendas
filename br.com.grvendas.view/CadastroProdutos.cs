@@ -60,6 +60,7 @@ namespace GRVendas.br.com.grvendas.view
             new Helpers().limparTela(this);
 
             // 3 - Recarregar o DGV Com os dados dos produtos
+            dgvProduto.DataSource = dao.ListarProdutos();
 
         }
 
@@ -76,6 +77,47 @@ namespace GRVendas.br.com.grvendas.view
             txtPreco.Text = dgvProduto.CurrentRow.Cells[2].Value.ToString();
             txtEstoque.Text = dgvProduto.CurrentRow.Cells[3].Value.ToString();
             cbFornecedor.Text = dgvProduto.CurrentRow.Cells[4].Value.ToString();
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            // 1 - Passo, receber todos os dados da tela
+
+            Produto obj = new Produto();
+
+            obj.Descricao = txtDesc.Text;
+            obj.Preco = Convert.ToDecimal(txtPreco.Text);
+            obj.QtdEstoque = Convert.ToInt32(txtEstoque.Text);
+            obj.for_id = Convert.ToInt32(cbFornecedor.SelectedValue);
+            obj.Id = int.Parse(txtCodigo.Text);
+
+            // 2 - Criar o objeto Dao
+
+            ProdutosDAO dao = new ProdutosDAO();
+            dao.AlterarProduto(obj);
+
+            new Helpers().limparTela(this);
+
+            // 3 - Recarregar o DGV
+            dgvProduto.DataSource = dao.ListarProdutos();
+        }
+
+        private void btnExcluir_Click(object sender, EventArgs e)
+        {
+            // 1 - Passo, receber todos os dados da tela
+
+            Produto obj = new Produto();
+            obj.Id = int.Parse(txtCodigo.Text); // OBS: Para excluir, somente o ID é necessário
+
+            // 2 - Criar o objeto Dao
+
+            ProdutosDAO dao = new ProdutosDAO();
+            dao.ExcluirProduto(obj);
+
+            new Helpers().limparTela(this);
+
+            // 3 - Recarregar o DGV
+            dgvProduto.DataSource = dao.ListarProdutos();
         }
     }
 }

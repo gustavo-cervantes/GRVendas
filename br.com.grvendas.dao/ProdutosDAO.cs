@@ -145,6 +145,8 @@ namespace GRVendas.br.com.grvendas.dao
             }
         }
         #endregion
+
+        #region
     }
 
 }

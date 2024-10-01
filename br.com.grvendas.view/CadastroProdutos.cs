@@ -31,6 +31,9 @@ namespace GRVendas.br.com.grvendas.view
             cbFornecedor.DataSource = F_dao.listarFornecedores();
             cbFornecedor.DisplayMember = "nome"; // Passará o nome do fornecedor para o combobox
             cbFornecedor.ValueMember = "id"; // Passará o código do fornecedor para o combobox
+
+            ProdutosDAO dao = new ProdutosDAO();
+            dgvProduto.DataSource = dao.ListarProdutos();
         }
 
         private void button1_Click(object sender, EventArgs e)

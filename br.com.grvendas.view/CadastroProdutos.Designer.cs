@@ -279,6 +279,7 @@
             this.dgvProduto.ReadOnly = true;
             this.dgvProduto.Size = new System.Drawing.Size(724, 224);
             this.dgvProduto.TabIndex = 13;
+            this.dgvProduto.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvProduto_CellClick);
             // 
             // txtPesquisa
             // 

@@ -67,5 +67,15 @@ namespace GRVendas.br.com.grvendas.view
         {
             new Helpers().limparTela(this);
         }
+
+        private void dgvProduto_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // 1 - Pegando os dados do produto selecionado
+            txtCodigo.Text = dgvProduto.CurrentRow.Cells[0].Value.ToString();
+            txtDesc.Text = dgvProduto.CurrentRow.Cells[1].Value.ToString();
+            txtPreco.Text = dgvProduto.CurrentRow.Cells[2].Value.ToString();
+            txtEstoque.Text = dgvProduto.CurrentRow.Cells[3].Value.ToString();
+            cbFornecedor.Text = dgvProduto.CurrentRow.Cells[4].Value.ToString();
+        }
     }
 }

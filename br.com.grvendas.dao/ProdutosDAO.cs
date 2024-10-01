@@ -87,6 +87,64 @@ namespace GRVendas.br.com.grvendas.dao
             }
         }
         #endregion
+
+        #region Método ExcluirProduto
+        public void ExcluirProduto(Produto obj)
+        {
+            try
+            {
+                // 1 - Criar o comando SQL
+                string sql = "delete from tb_produtos where id=@id";
+
+                // 2 - Organizar o comando SQL
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", obj.Id);
+
+                // 3 - Executa o comando SQL
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                MessageBox.Show("Produto cadastrado com sucesso!");
+                conexao.Close();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao excluir produto: " + erro);
+                throw;
+            }
+        }
+        #endregion
+
+        #region Método AlterarProduto
+        public void AlterarProduto(Produto obj)
+        {
+            try
+            {
+                // 1 - Criar o comando SQL
+                string sql = "update tb_produtos set descricao = @descricao, preco = @preco, qtd_estoque = @qtd_estoque, for_id = @for_id where id = @id";
+
+                // 2 - Organizar o comando SQL
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@descricao", obj.Descricao);
+                executacmd.Parameters.AddWithValue("@preco", obj.Preco);
+                executacmd.Parameters.AddWithValue("@qtd_estoque", obj.QtdEstoque);
+                executacmd.Parameters.AddWithValue("@id", obj.Id);
+                executacmd.Parameters.AddWithValue("@for_id", obj.for_id);
+
+                // 3 - Executa o comando SQL
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                MessageBox.Show("Produto cadastrado com sucesso!");
+                conexao.Close();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao alterar produto: " + erro);
+                throw;
+            }
+        }
+        #endregion
     }
 
 }

@@ -1,4 +1,5 @@
 ﻿using GRVendas.br.com.grvendas.dao;
+using GRVendas.br.com.grvendas.model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -39,6 +40,23 @@ namespace GRVendas.br.com.grvendas.view
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
+            // 1 - Passo, receber todos os dados da tela
+
+            Produto obj = new Produto();
+
+            obj.Descricao = txtDesc.Text;
+            obj.Preco = Convert.ToDecimal(txtPreco.Text);
+            obj.QtdEstoque = Convert.ToInt32(txtEstoque.Text);
+            obj.for_id = Convert.ToInt32(cbFornecedor.SelectedValue);
+
+            // 2 - Criar o objeto Dao
+
+            ProdutosDAO dao = new ProdutosDAO();
+            dao.CadastrarProduto(obj);
+
+            new Helpers().limparTela(this);
+
+            // 3 - Recarregar o DGV Com os dados dos produtos
 
         }
     }

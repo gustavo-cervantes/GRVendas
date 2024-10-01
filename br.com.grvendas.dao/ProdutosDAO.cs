@@ -20,7 +20,7 @@ namespace GRVendas.br.com.grvendas.dao
 
         #region MetodoCadastarProduto
 
-        public void CadastraProduto(Produto obj)
+        public void CadastrarProduto(Produto obj)
         {
             try
             {

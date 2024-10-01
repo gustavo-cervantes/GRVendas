@@ -59,5 +59,10 @@ namespace GRVendas.br.com.grvendas.view
             // 3 - Recarregar o DGV Com os dados dos produtos
 
         }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            new Helpers().limparTela(this);
+        }
     }
 }

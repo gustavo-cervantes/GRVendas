@@ -106,7 +106,9 @@
     <Compile Include="br.com.grvendas.model\Fornecedor.cs" />
     <Compile Include="br.com.grvendas.model\Funcionario.cs" />
     <Compile Include="br.com.grvendas.model\Helpers.cs" />
+    <Compile Include="br.com.grvendas.model\ItemVenda.cs" />
     <Compile Include="br.com.grvendas.model\Produto.cs" />
+    <Compile Include="br.com.grvendas.model\Venda.cs" />
     <Compile Include="br.com.grvendas.view\CadastroClientes.cs">
       <SubType>Form</SubType>
     </Compile>

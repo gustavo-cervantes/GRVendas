@@ -72,6 +72,9 @@ namespace GRVendas.br.com.grvendas.view
             txtPreco.Text = dgvProduto.CurrentRow.Cells[2].Value.ToString();
             txtEstoque.Text = dgvProduto.CurrentRow.Cells[3].Value.ToString();
             cbFornecedor.Text = dgvProduto.CurrentRow.Cells[4].Value.ToString();
+
+            // 2 - Mudar para a aba de dados
+            tbProdutos.SelectedTab = tabPage1;
         }
 
         private void btnEditar_Click(object sender, EventArgs e)

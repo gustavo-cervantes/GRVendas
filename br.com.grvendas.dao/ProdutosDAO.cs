@@ -223,6 +223,47 @@ namespace GRVendas.br.com.grvendas.dao
             }
         }
         #endregion
+
+        #region Método RetornarProdutoPorId (codigo)
+        public Produto RetornaProdutoPorCodigo(int id)
+        {
+            try
+            {
+                // 1 - passo - criar o comando SQL
+
+                string sql = @"select * from tb_produtos where id = @id";
+
+                // 2 - passo - organizar o comando SQL e executar o comando SQL
+                MySqlCommand executaCmd = new MySqlCommand(sql, conexao);
+                executaCmd.Parameters.AddWithValue("@id", id);
+                conexao.Open();
+
+                // 3 - passo - Criar o Mysqldatareader
+                MySqlDataReader rs = executaCmd.ExecuteReader();
+
+                if (rs.Read())
+                {
+                    Produto p = new Produto();
+                    p.Id = rs.GetInt32("id");
+                    p.Descricao = rs.GetString("descricao");
+                    p.Preco = rs.GetDecimal("preco");
+
+                    return p;
+                }
+
+                else 
+                {
+                    MessageBox.Show("Produto não encontrado, verifque o código e tente novamente. ");
+                    return null; 
+                }
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Aconteceu um erro: " + erro);
+                return null;
+            }
+        }
+        #endregion
     }
 
 }

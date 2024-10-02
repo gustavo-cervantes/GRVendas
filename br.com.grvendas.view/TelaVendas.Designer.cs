@@ -31,6 +31,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtData = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.txtCpf = new System.Windows.Forms.MaskedTextBox();
@@ -54,8 +56,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnPagamento = new System.Windows.Forms.Button();
-            this.txtData = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -99,6 +99,23 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cliente";
             // 
+            // txtData
+            // 
+            this.txtData.Location = new System.Drawing.Point(66, 39);
+            this.txtData.Name = "txtData";
+            this.txtData.Size = new System.Drawing.Size(121, 20);
+            this.txtData.TabIndex = 13;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(13, 39);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(38, 17);
+            this.label8.TabIndex = 12;
+            this.label8.Text = "Data:";
+            // 
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(66, 111);
@@ -123,6 +140,7 @@
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(100, 20);
             this.txtCpf.TabIndex = 11;
+            this.txtCpf.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCpf_KeyPress);
             // 
             // label11
             // 
@@ -314,23 +332,6 @@
             this.btnPagamento.TabIndex = 19;
             this.btnPagamento.Text = "Pagamento";
             this.btnPagamento.UseVisualStyleBackColor = false;
-            // 
-            // txtData
-            // 
-            this.txtData.Location = new System.Drawing.Point(66, 39);
-            this.txtData.Name = "txtData";
-            this.txtData.Size = new System.Drawing.Size(121, 20);
-            this.txtData.TabIndex = 13;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(13, 39);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(38, 17);
-            this.label8.TabIndex = 12;
-            this.label8.Text = "Data:";
             // 
             // TelaVendas
             // 

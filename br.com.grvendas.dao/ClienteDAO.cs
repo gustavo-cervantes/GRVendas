@@ -1,6 +1,7 @@
 ﻿using GRVendas.br.com.grvendas.model;
 using GRVendas.br.com.vendas.conexao;
 using MySql.Data.MySqlClient;
+using Mysqlx;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -298,6 +299,49 @@ namespace GRVendas.br.com.grvendas.dao
                 MessageBox.Show("Aconteceu o erro:" + erro);
                 return null;
             }
+        }
+
+        #endregion
+
+        #region Método RetornaClientePorCpf
+        public Cliente RetornaClientePorCpf(string cpf)
+        {
+            try
+            {
+                // 1 - Comando sql e o obj cliente
+                Cliente obj = new Cliente();
+                string sql = @"select * from tb_clientes where cpf=@cpf";
+
+                // 2 - Organizar o comando SQL e executar
+                MySqlCommand executaCmd = new MySqlCommand(sql, conexao);
+                executaCmd.Parameters.AddWithValue("@cpf", cpf); // Passando o parâmetro nome para a consulta
+
+                conexao.Open();
+
+                MySqlDataReader rs = executaCmd.ExecuteReader();
+
+                if (rs.Read())
+                {
+                    obj.Codigo = rs.GetInt32("id");
+                    obj.Nome = rs.GetString("nome");
+
+                    return obj;
+                }
+
+                else
+                {
+                    MessageBox.Show("Cliente não encontrado!");
+
+                    return null;
+                }
+            } 
+            catch (Exception erro)
+            {
+                MessageBox.Show("Aconteceu um erro: " + erro);
+
+                return null;
+            }
+
         }
 
         #endregion

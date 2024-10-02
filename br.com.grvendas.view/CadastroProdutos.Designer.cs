@@ -68,6 +68,7 @@
             this.label1.Size = new System.Drawing.Size(210, 26);
             this.label1.TabIndex = 0;
             this.label1.Text = "Cadastro de Produtos";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // panel1
             // 
@@ -129,6 +130,7 @@
             this.tbProdutos.SelectedIndex = 0;
             this.tbProdutos.Size = new System.Drawing.Size(775, 340);
             this.tbProdutos.TabIndex = 6;
+            this.tbProdutos.SelectedIndexChanged += new System.EventHandler(this.tbProdutos_SelectedIndexChanged);
             // 
             // tabPage1
             // 

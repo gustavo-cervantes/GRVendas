@@ -139,5 +139,15 @@ namespace GRVendas.br.com.grvendas.view
                 dgvProduto.DataSource = dao.ListarProdutos();
             }
         }
+
+        private void tbProdutos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

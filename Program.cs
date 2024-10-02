@@ -17,7 +17,7 @@ namespace GRVendas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CadastroProdutos());
+            Application.Run(new TelaVendas());
         }
     }
 }

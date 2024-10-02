@@ -36,11 +36,6 @@ namespace GRVendas.br.com.grvendas.view
             dgvProduto.DataSource = dao.ListarProdutos();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("Valor do combobox: " + cbFornecedor.SelectedValue);
-        }
-
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             // 1 - Passo, receber todos os dados da tela
@@ -118,6 +113,28 @@ namespace GRVendas.br.com.grvendas.view
 
             // 3 - Recarregar o DGV
             dgvProduto.DataSource = dao.ListarProdutos();
+        }
+
+        private void txtPesquisa_TextChanged(object sender, EventArgs e)
+        {
+            string nome = "%" + txtPesquisa.Text + "%";
+            ProdutosDAO dao = new ProdutosDAO();
+            dgvProduto.DataSource = dao.ListarProdutosPorNome(nome);
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string nome = txtPesquisa.Text;                                                                          
+            ProdutosDAO dao = new ProdutosDAO();
+            dgvProduto.DataSource = dao.ListarProdutosPorNome(nome);
+
+            if (dgvProduto.Rows.Count == 0 )
+            {
+                MessageBox.Show("Nenhum produto foi encontrado");
+
+                // Recarregar o DGV
+                dgvProduto.DataSource = dao.ListarProdutos();
+            }
         }
     }
 }

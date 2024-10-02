@@ -135,7 +135,7 @@ namespace GRVendas.br.com.grvendas.dao
                 conexao.Open();
                 executacmd.ExecuteNonQuery();
 
-                MessageBox.Show("Produto cadastrado com sucesso!");
+                MessageBox.Show("Produto alterado com sucesso!");
                 conexao.Close();
             }
             catch (Exception erro)
@@ -146,7 +146,83 @@ namespace GRVendas.br.com.grvendas.dao
         }
         #endregion
 
-        #region
+        #region Método ListarProdutosPorNome (like)
+        public DataTable ListarProdutosPorNome(string nome)
+        {
+            try
+            {
+                // 1- Criar o datatable e o comando SQL
+                DataTable tabelaProdutos = new DataTable();
+                string sql = @"select p.id as 'Código',
+                        p.descricao as 'Descrição',
+                        p.preco as 'Preço',
+	                    p.qtd_estoque as 'Qtd Estoque',
+                        f.nome as 'Fornecedor' from tb_produtos as p 
+                        JOIN tb_fornecedores as f ON (p.for_id = f.id) where p.descricao like @nome;";
+
+                // 2 - Organizar o comando SQL e executar
+                MySqlCommand executaCmd = new MySqlCommand(sql, conexao);
+                executaCmd.Parameters.AddWithValue("@nome", nome);
+
+                conexao.Open();
+                executaCmd.ExecuteNonQuery();
+
+                // 3 - Criar o MySqlDataAdapter ( adaptador ) e preencher os dados no datatable
+                // passando como parâmetro o comando SQL executaCmd
+                MySqlDataAdapter dataadapter = new MySqlDataAdapter(executaCmd);
+                dataadapter.Fill(tabelaProdutos); // Preencher o datatable com os dados do banco de dados 
+
+                // 4 - Fechar a conexão
+                conexao.Close();
+
+                return tabelaProdutos;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Aconteceu o erro: " + erro);
+                return null;
+            }
+        }
+        #endregion
+
+        #region Método BuscarProdutosPorNome (equal)
+        public DataTable BuscarProdutosPorNome(string nome)
+        {
+            try
+            {
+                // 1- Criar o datatable e o comando SQL
+                DataTable tabelaProdutos = new DataTable();
+                string sql = @"select p.id as 'Código',
+                        p.descricao as 'Descrição',
+                        p.preco as 'Preço',
+	                    p.qtd_estoque as 'Qtd Estoque',
+                        f.nome as 'Fornecedor' from tb_produtos as p 
+                        JOIN tb_fornecedores as f ON (p.for_id = f.id) where p.descricao = @nome;";
+
+                // 2 - Organizar o comando SQL e executar
+                MySqlCommand executaCmd = new MySqlCommand(sql, conexao);
+                executaCmd.Parameters.AddWithValue("@nome", nome);
+
+                conexao.Open();
+                executaCmd.ExecuteNonQuery();
+
+                // 3 - Criar o MySqlDataAdapter ( adaptador ) e preencher os dados no datatable
+                // passando como parâmetro o comando SQL executaCmd
+                MySqlDataAdapter dataadapter = new MySqlDataAdapter(executaCmd);
+                dataadapter.Fill(tabelaProdutos); // Preencher o datatable com os dados do banco de dados 
+
+                // 4 - Fechar a conexão
+                conexao.Close();
+
+                return tabelaProdutos;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Aconteceu o erro: " + erro);
+                return null;
+            }
+        }
+        #endregion
     }
 
 }

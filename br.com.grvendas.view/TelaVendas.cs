@@ -29,7 +29,7 @@ namespace GRVendas.br.com.grvendas.view
         // 3 - Variaveis
         int qtd;
         decimal preco;
-        decimal subtotal_total;
+        decimal subtotal, total;
 
         // 4 - Carrinho
         DataTable Carrinho = new DataTable(); // DataTable é uma tabela de dados em memória
@@ -37,11 +37,11 @@ namespace GRVendas.br.com.grvendas.view
         public TelaVendas()
         {
             InitializeComponent();
-            Carrinho.Columns.Add("Código", typeof(int));
-            Carrinho.Columns.Add("Descrição", typeof(string));
-            Carrinho.Columns.Add("Quantidade", typeof(int));
-            Carrinho.Columns.Add("Preço", typeof(decimal));
-            Carrinho.Columns.Add("Subtotal", typeof(decimal));
+            Carrinho.Columns.Add("Código", typeof(int)); // tipo de codigo da coluna é int TYPEOF = tipo
+            Carrinho.Columns.Add("Descrição", typeof(string)); // tipo de descricao da coluna é string TYPEOF = tipo
+            Carrinho.Columns.Add("Quantidade", typeof(int)); // tipo de quantidade da coluna é int TYPEOF = tipo
+            Carrinho.Columns.Add("Preço", typeof(decimal)); // tipo de preço da coluna é decimal TYPEOF = tipo
+            Carrinho.Columns.Add("Subtotal", typeof(decimal)); // tipo de subtotal da coluna é decimal TYPEOF = tipo
 
             tabelaProdutos.DataSource = Carrinho;
         }
@@ -60,8 +60,8 @@ namespace GRVendas.br.com.grvendas.view
             if (e.KeyChar == 13)
             {
                 p = pdao.RetornaProdutoPorCodigo(int.Parse(txtCodigo.Text));
-                txtDesc.Text = p.Descricao; // Fix: Assign to the Text property of the TextBox
-                txtPreco.Text = p.Preco.ToString(); // Fix: Assign to the Text property of the TextBox and call ToString()
+                txtDesc.Text = p.Descricao; 
+                txtPreco.Text = p.Preco.ToString(); 
 
                 // fechar conexao e limpar campos
             }
@@ -70,6 +70,37 @@ namespace GRVendas.br.com.grvendas.view
         private void TelaVendas_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            // 1 - botão adicionar item
+
+            qtd = int.Parse(txtQtd.Text);
+            preco = decimal.Parse(txtPreco.Text);
+
+            subtotal = qtd * preco;
+
+            // += representa ao c#, sempre pegar o que tem dentro da variavel total e somar com o subtotal.
+            total += subtotal; 
+
+            // Adicionar o produto no carrinho
+
+            // Carrinho é ninguém mais ninguém menos que a DataTable que foi criada la em cima.
+            // Rows = Linhas, Add = Adicionar dados/linhas...
+            // Apenas o codigo/id foi convertido pois é int
+
+            Carrinho.Rows.Add(int.Parse(txtCodigo.Text), txtDesc.Text, qtd, preco, subtotal);
+
+            txtTotal.Text = total.ToString(); 
+
+            // Limpar os campos
+            txtCodigo.Clear();
+            txtDesc.Clear();
+            txtPreco.Clear();
+            txtQtd.Clear();
+
+            txtCodigo.Focus();
         }
     }
 }

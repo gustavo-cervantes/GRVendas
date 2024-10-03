@@ -50,7 +50,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.tabelaProdutos = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtTotal = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -70,7 +70,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(925, 92);
+            this.panel1.Size = new System.Drawing.Size(977, 92);
             this.panel1.TabIndex = 7;
             // 
             // label1
@@ -190,6 +190,7 @@
             this.btnAdd.TabIndex = 10;
             this.btnAdd.Text = "Adicionar Item";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtQtd
             // 
@@ -262,30 +263,33 @@
             // 
             // tabelaProdutos
             // 
+            this.tabelaProdutos.AllowUserToAddRows = false;
+            this.tabelaProdutos.AllowUserToDeleteRows = false;
             this.tabelaProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabelaProdutos.Location = new System.Drawing.Point(396, 117);
             this.tabelaProdutos.Name = "tabelaProdutos";
-            this.tabelaProdutos.Size = new System.Drawing.Size(489, 349);
+            this.tabelaProdutos.ReadOnly = true;
+            this.tabelaProdutos.Size = new System.Drawing.Size(544, 349);
             this.tabelaProdutos.TabIndex = 10;
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox2);
+            this.groupBox3.Controls.Add(this.txtTotal);
             this.groupBox3.Controls.Add(this.label6);
             this.groupBox3.Controls.Add(this.textBox1);
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Location = new System.Drawing.Point(396, 472);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(489, 73);
+            this.groupBox3.Size = new System.Drawing.Size(544, 73);
             this.groupBox3.TabIndex = 12;
             this.groupBox3.TabStop = false;
             // 
-            // textBox2
+            // txtTotal
             // 
-            this.textBox2.Location = new System.Drawing.Point(82, 34);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(121, 20);
-            this.textBox2.TabIndex = 13;
+            this.txtTotal.Location = new System.Drawing.Point(82, 34);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.Size = new System.Drawing.Size(178, 20);
+            this.txtTotal.TabIndex = 13;
             // 
             // label6
             // 
@@ -317,9 +321,9 @@
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(660, 562);
+            this.btnCancelar.Location = new System.Drawing.Point(705, 569);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(225, 43);
+            this.btnCancelar.Size = new System.Drawing.Size(192, 43);
             this.btnCancelar.TabIndex = 20;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -327,9 +331,9 @@
             // btnPagamento
             // 
             this.btnPagamento.BackColor = System.Drawing.Color.White;
-            this.btnPagamento.Location = new System.Drawing.Point(407, 562);
+            this.btnPagamento.Location = new System.Drawing.Point(452, 569);
             this.btnPagamento.Name = "btnPagamento";
-            this.btnPagamento.Size = new System.Drawing.Size(220, 43);
+            this.btnPagamento.Size = new System.Drawing.Size(187, 43);
             this.btnPagamento.TabIndex = 19;
             this.btnPagamento.Text = "Pagamento";
             this.btnPagamento.UseVisualStyleBackColor = false;
@@ -338,7 +342,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(925, 644);
+            this.ClientSize = new System.Drawing.Size(977, 644);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnPagamento);
             this.Controls.Add(this.groupBox3);
@@ -384,7 +388,7 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView tabelaProdutos;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label5;

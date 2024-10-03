@@ -247,13 +247,14 @@ namespace GRVendas.br.com.grvendas.dao
                     p.Id = rs.GetInt32("id");
                     p.Descricao = rs.GetString("descricao");
                     p.Preco = rs.GetDecimal("preco");
-
+                    conexao.Close();
                     return p;
                 }
 
                 else 
                 {
                     MessageBox.Show("Produto não encontrado, verifque o código e tente novamente. ");
+                    conexao.Close();
                     return null; 
                 }
             }

@@ -19,6 +19,14 @@ namespace GRVendas.br.com.grvendas.view
 
         Cliente cliente = new Cliente();
         ClienteDAO cdao = new ClienteDAO();
+
+
+        // 2 - Objetos de produto
+        
+        Produto p = new Produto();
+        ProdutosDAO pdao = new ProdutosDAO();
+
+
         public TelaVendas()
         {
             InitializeComponent();
@@ -30,6 +38,16 @@ namespace GRVendas.br.com.grvendas.view
             {
                 cliente = cdao.RetornaClientePorCpf(txtCpf.Text);
                 txtNome.Text = cliente.Nome; // Nome fica dentro do cliente
+            }
+        }
+
+        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 13)
+            {
+                p = pdao.RetornaProdutoPorCodigo(int.Parse(txtCodigo.Text));
+                txtDesc.Text = p.Descricao; // Fix: Assign to the Text property of the TextBox
+                txtPreco.Text = p.Preco.ToString(); // Fix: Assign to the Text property of the TextBox and call ToString()
             }
         }
     }

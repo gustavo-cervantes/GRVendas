@@ -72,6 +72,27 @@ namespace GRVendas.br.com.grvendas.view
 
         }
 
+        private void btnRemover_Click(object sender, EventArgs e)
+        {
+            // 1 - Botão remover item
+
+            decimal subproduto = decimal.Parse(tabelaProdutos.CurrentRow.Cells[4].Value.ToString()); // Pega o valor da coluna 4 e guarda na variavel subproduto
+
+            int indice = tabelaProdutos.CurrentRow.Index; // Pega o indice da linha selecionada
+
+            DataRow linha = Carrinho.Rows[indice]; // Pega a linha selecionada
+
+            Carrinho.Rows.Remove(linha); // Remove a linha selecionada
+
+            Carrinho.AcceptChanges();
+
+            total -= subproduto; // Diminui o valor do subproduto do total 
+
+            txtTotal.Text = total.ToString();
+
+            MessageBox.Show("Item removido do carrinho com sucesso! ");
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             // 1 - botão adicionar item

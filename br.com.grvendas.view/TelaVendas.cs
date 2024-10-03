@@ -26,10 +26,24 @@ namespace GRVendas.br.com.grvendas.view
         Produto p = new Produto();
         ProdutosDAO pdao = new ProdutosDAO();
 
+        // 3 - Variaveis
+        int qtd;
+        decimal preco;
+        decimal subtotal_total;
+
+        // 4 - Carrinho
+        DataTable Carrinho = new DataTable(); // DataTable é uma tabela de dados em memória
 
         public TelaVendas()
         {
             InitializeComponent();
+            Carrinho.Columns.Add("Código", typeof(int));
+            Carrinho.Columns.Add("Descrição", typeof(string));
+            Carrinho.Columns.Add("Quantidade", typeof(int));
+            Carrinho.Columns.Add("Preço", typeof(decimal));
+            Carrinho.Columns.Add("Subtotal", typeof(decimal));
+
+            tabelaProdutos.DataSource = Carrinho;
         }
 
         private void txtCpf_KeyPress(object sender, KeyPressEventArgs e)
@@ -48,7 +62,14 @@ namespace GRVendas.br.com.grvendas.view
                 p = pdao.RetornaProdutoPorCodigo(int.Parse(txtCodigo.Text));
                 txtDesc.Text = p.Descricao; // Fix: Assign to the Text property of the TextBox
                 txtPreco.Text = p.Preco.ToString(); // Fix: Assign to the Text property of the TextBox and call ToString()
+
+                // fechar conexao e limpar campos
             }
+        }
+
+        private void TelaVendas_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

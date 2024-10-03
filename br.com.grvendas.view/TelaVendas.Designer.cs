@@ -70,7 +70,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 92);
+            this.panel1.Size = new System.Drawing.Size(925, 92);
             this.panel1.TabIndex = 7;
             // 
             // label1
@@ -78,7 +78,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Candara", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(32, 31);
+            this.label1.Location = new System.Drawing.Point(32, 32);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 26);
             this.label1.TabIndex = 0;
@@ -265,7 +265,7 @@
             this.tabelaProdutos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.tabelaProdutos.Location = new System.Drawing.Point(396, 117);
             this.tabelaProdutos.Name = "tabelaProdutos";
-            this.tabelaProdutos.Size = new System.Drawing.Size(376, 349);
+            this.tabelaProdutos.Size = new System.Drawing.Size(489, 349);
             this.tabelaProdutos.TabIndex = 10;
             // 
             // groupBox3
@@ -276,7 +276,7 @@
             this.groupBox3.Controls.Add(this.label5);
             this.groupBox3.Location = new System.Drawing.Point(396, 472);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(376, 73);
+            this.groupBox3.Size = new System.Drawing.Size(489, 73);
             this.groupBox3.TabIndex = 12;
             this.groupBox3.TabStop = false;
             // 
@@ -317,9 +317,9 @@
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(583, 562);
+            this.btnCancelar.Location = new System.Drawing.Point(660, 562);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(156, 43);
+            this.btnCancelar.Size = new System.Drawing.Size(225, 43);
             this.btnCancelar.TabIndex = 20;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -329,7 +329,7 @@
             this.btnPagamento.BackColor = System.Drawing.Color.White;
             this.btnPagamento.Location = new System.Drawing.Point(407, 562);
             this.btnPagamento.Name = "btnPagamento";
-            this.btnPagamento.Size = new System.Drawing.Size(154, 43);
+            this.btnPagamento.Size = new System.Drawing.Size(220, 43);
             this.btnPagamento.TabIndex = 19;
             this.btnPagamento.Text = "Pagamento";
             this.btnPagamento.UseVisualStyleBackColor = false;
@@ -338,7 +338,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 669);
+            this.ClientSize = new System.Drawing.Size(925, 644);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnPagamento);
             this.Controls.Add(this.groupBox3);
@@ -348,6 +348,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "TelaVendas";
             this.Text = "Tela de Vendas";
+            this.Load += new System.EventHandler(this.TelaVendas_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

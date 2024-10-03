@@ -93,6 +93,11 @@ namespace GRVendas.br.com.grvendas.view
             MessageBox.Show("Item removido do carrinho com sucesso! ");
         }
 
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             // 1 - botão adicionar item

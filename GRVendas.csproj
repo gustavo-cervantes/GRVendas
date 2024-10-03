@@ -134,6 +134,12 @@
     <Compile Include="br.com.grvendas.view\CadastroProdutos.Designer.cs">
       <DependentUpon>CadastroProdutos.cs</DependentUpon>
     </Compile>
+    <Compile Include="br.com.grvendas.view\TelaPagamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="br.com.grvendas.view\TelaPagamentos.Designer.cs">
+      <DependentUpon>TelaPagamentos.cs</DependentUpon>
+    </Compile>
     <Compile Include="br.com.grvendas.view\TelaVendas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +165,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="br.com.grvendas.view\CadastroProdutos.resx">
       <DependentUpon>CadastroProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="br.com.grvendas.view\TelaPagamentos.resx">
+      <DependentUpon>TelaPagamentos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="br.com.grvendas.view\TelaVendas.resx">
       <DependentUpon>TelaVendas.cs</DependentUpon>

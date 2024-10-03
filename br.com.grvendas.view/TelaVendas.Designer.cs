@@ -322,21 +322,22 @@
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(705, 569);
+            this.btnCancelar.Location = new System.Drawing.Point(442, 569);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(192, 43);
             this.btnCancelar.TabIndex = 20;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnPagamento
             // 
             this.btnPagamento.BackColor = System.Drawing.Color.White;
-            this.btnPagamento.Location = new System.Drawing.Point(452, 569);
+            this.btnPagamento.Location = new System.Drawing.Point(702, 569);
             this.btnPagamento.Name = "btnPagamento";
             this.btnPagamento.Size = new System.Drawing.Size(187, 43);
             this.btnPagamento.TabIndex = 19;
-            this.btnPagamento.Text = "Pagamento";
+            this.btnPagamento.Text = "Receber e Finalizar";
             this.btnPagamento.UseVisualStyleBackColor = false;
             // 
             // TelaVendas

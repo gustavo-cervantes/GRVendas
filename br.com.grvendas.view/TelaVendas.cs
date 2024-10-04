@@ -69,7 +69,8 @@ namespace GRVendas.br.com.grvendas.view
 
         private void TelaVendas_Load(object sender, EventArgs e)
         {
-
+            // 1 - Pegando a data atual do Usuário
+            txtData.Text = DateTime.Now.ToShortDateString();
         }
 
         private void btnRemover_Click(object sender, EventArgs e)
@@ -102,7 +103,12 @@ namespace GRVendas.br.com.grvendas.view
         {
             // 1 - Botão de pagamento
             // Instanciando a classe TelaPagamentos para abrir a tela de pagamentos quando o botão de pagamento for clicado
-            TelaPagamentos tela = new TelaPagamentos(cliente,Carrinho);
+
+            // Capturei a data e já passei para outro form ( pagamento )
+            DateTime dataAtual = DateTime.Parse(txtData.Text);
+
+
+            TelaPagamentos tela = new TelaPagamentos(cliente,Carrinho, dataAtual);
 
             // Passando o valor total para a tela de pagamentos
             tela.txtTotal.Text = txtTotal.Text;

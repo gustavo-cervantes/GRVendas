@@ -333,12 +333,14 @@
             // btnPagamento
             // 
             this.btnPagamento.BackColor = System.Drawing.Color.White;
+            this.btnPagamento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnPagamento.Location = new System.Drawing.Point(702, 569);
             this.btnPagamento.Name = "btnPagamento";
             this.btnPagamento.Size = new System.Drawing.Size(187, 43);
             this.btnPagamento.TabIndex = 19;
             this.btnPagamento.Text = "Receber e Finalizar";
             this.btnPagamento.UseVisualStyleBackColor = false;
+            this.btnPagamento.Click += new System.EventHandler(this.btnPagamento_Click);
             // 
             // TelaVendas
             // 

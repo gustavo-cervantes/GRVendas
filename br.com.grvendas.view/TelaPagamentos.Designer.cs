@@ -37,7 +37,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtPix = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtTotal = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btnReceber = new System.Windows.Forms.Button();
             this.txtTroco = new System.Windows.Forms.TextBox();
@@ -130,14 +130,15 @@
             this.label5.TabIndex = 22;
             this.label5.Text = "Troco:";
             // 
-            // textBox4
+            // txtTotal
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(201, 350);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(134, 29);
-            this.textBox4.TabIndex = 23;
+            this.txtTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotal.Location = new System.Drawing.Point(201, 350);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
+            this.txtTotal.Size = new System.Drawing.Size(134, 29);
+            this.txtTotal.TabIndex = 23;
+            this.txtTotal.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label7
             // 
@@ -158,6 +159,7 @@
             this.btnReceber.TabIndex = 26;
             this.btnReceber.Text = "Receber";
             this.btnReceber.UseVisualStyleBackColor = false;
+            this.btnReceber.Click += new System.EventHandler(this.btnReceber_Click);
             // 
             // txtTroco
             // 
@@ -177,7 +179,7 @@
             this.Controls.Add(this.btnReceber);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtTotal);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtPix);
             this.Controls.Add(this.label3);
@@ -209,6 +211,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnReceber;
         private System.Windows.Forms.TextBox txtTroco;
-        public System.Windows.Forms.TextBox textBox4;
+        public System.Windows.Forms.TextBox txtTotal;
     }
 }

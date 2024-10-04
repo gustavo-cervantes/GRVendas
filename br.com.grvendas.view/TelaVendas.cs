@@ -98,35 +98,53 @@ namespace GRVendas.br.com.grvendas.view
 
         }
 
+        private void btnPagamento_Click(object sender, EventArgs e)
+        {
+            // 1 - Botão de pagamento
+            // Instanciando a classe TelaPagamentos para abrir a tela de pagamentos quando o botão de pagamento for clicado
+            TelaPagamentos tela = new TelaPagamentos(cliente,Carrinho);
+
+            // Passando o valor total para a tela de pagamentos
+            tela.txtTotal.Text = txtTotal.Text;
+            tela.ShowDialog();
+        }
+
         private void btnAdd_Click(object sender, EventArgs e)
         {
             // 1 - botão adicionar item
+            try
+            {
+                qtd = int.Parse(txtQtd.Text);
+                preco = decimal.Parse(txtPreco.Text);
 
-            qtd = int.Parse(txtQtd.Text);
-            preco = decimal.Parse(txtPreco.Text);
+                subtotal = qtd * preco;
 
-            subtotal = qtd * preco;
+                // += representa ao c#, sempre pegar o que tem dentro da variavel total e somar com o subtotal.
+                total += subtotal;
 
-            // += representa ao c#, sempre pegar o que tem dentro da variavel total e somar com o subtotal.
-            total += subtotal; 
+                // Adicionar o produto no carrinho
 
-            // Adicionar o produto no carrinho
+                // Carrinho é ninguém mais ninguém menos que a DataTable que foi criada la em cima.
+                // Rows = Linhas, Add = Adicionar dados/linhas...
+                // Apenas o codigo/id foi convertido pois é int
 
-            // Carrinho é ninguém mais ninguém menos que a DataTable que foi criada la em cima.
-            // Rows = Linhas, Add = Adicionar dados/linhas...
-            // Apenas o codigo/id foi convertido pois é int
+                Carrinho.Rows.Add(int.Parse(txtCodigo.Text), txtDesc.Text, qtd, preco, subtotal);
 
-            Carrinho.Rows.Add(int.Parse(txtCodigo.Text), txtDesc.Text, qtd, preco, subtotal);
+                txtTotal.Text = total.ToString();
 
-            txtTotal.Text = total.ToString(); 
+                // Limpar os campos
+                txtCodigo.Clear();
+                txtDesc.Clear();
+                txtPreco.Clear();
+                txtQtd.Clear();
 
-            // Limpar os campos
-            txtCodigo.Clear();
-            txtDesc.Clear();
-            txtPreco.Clear();
-            txtQtd.Clear();
-
-            txtCodigo.Focus();
+                txtCodigo.Focus();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Digite o código do produto");
+                throw;
+            }
         }
     }
 }

@@ -145,6 +145,9 @@ namespace GRVendas.br.com.grvendas.view
                 MessageBox.Show("Digite o código do produto");
                 throw;
             }
+
+            // Regra de negócio para registrar uma venda, adicionada ao README
+            // Esta regra é aplicada no nosso banco de dados MYSQL
         }
     }
 }

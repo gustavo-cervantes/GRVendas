@@ -102,6 +102,7 @@
     <Compile Include="br.com.grvendas.dao\FornecedorDAO.cs" />
     <Compile Include="br.com.grvendas.dao\FuncionarioDAO.cs" />
     <Compile Include="br.com.grvendas.dao\ProdutosDAO.cs" />
+    <Compile Include="br.com.grvendas.dao\VendaDAO.cs" />
     <Compile Include="br.com.grvendas.model\Cliente.cs" />
     <Compile Include="br.com.grvendas.model\Fornecedor.cs" />
     <Compile Include="br.com.grvendas.model\Funcionario.cs" />

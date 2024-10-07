@@ -41,6 +41,8 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnReceber = new System.Windows.Forms.Button();
             this.txtTroco = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtObs = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -153,7 +155,7 @@
             // btnReceber
             // 
             this.btnReceber.BackColor = System.Drawing.Color.White;
-            this.btnReceber.Location = new System.Drawing.Point(29, 445);
+            this.btnReceber.Location = new System.Drawing.Point(29, 609);
             this.btnReceber.Name = "btnReceber";
             this.btnReceber.Size = new System.Drawing.Size(377, 43);
             this.btnReceber.TabIndex = 26;
@@ -170,11 +172,33 @@
             this.txtTroco.Size = new System.Drawing.Size(134, 29);
             this.txtTroco.TabIndex = 27;
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(29, 409);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(126, 25);
+            this.label6.TabIndex = 28;
+            this.label6.Text = "Observações:";
+            // 
+            // txtObs
+            // 
+            this.txtObs.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtObs.Location = new System.Drawing.Point(29, 437);
+            this.txtObs.Multiline = true;
+            this.txtObs.Name = "txtObs";
+            this.txtObs.Size = new System.Drawing.Size(377, 151);
+            this.txtObs.TabIndex = 29;
+            this.txtObs.TextChanged += new System.EventHandler(this.txtObs_TextChanged);
+            // 
             // TelaPagamentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(431, 537);
+            this.ClientSize = new System.Drawing.Size(431, 694);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.txtObs);
             this.Controls.Add(this.txtTroco);
             this.Controls.Add(this.btnReceber);
             this.Controls.Add(this.label7);
@@ -212,5 +236,7 @@
         private System.Windows.Forms.Button btnReceber;
         private System.Windows.Forms.TextBox txtTroco;
         public System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtObs;
     }
 }

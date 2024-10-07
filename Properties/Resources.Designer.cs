@@ -63,6 +63,46 @@ namespace GRVendas.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _66684_basket_accept_icon {
+            get {
+                object obj = ResourceManager.GetObject("66684_basket_accept_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _66697_accept_icon {
+            get {
+                object obj = ResourceManager.GetObject("66697_accept_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _66697_accept_icon_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("66697_accept_icon-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _66700_deny_icon {
+            get {
+                object obj = ResourceManager.GetObject("66700_deny_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap kisspng_check_mark_computer_icons_symbol_clip_art_tick_5acb37ef2a51d0_9297129215232675671734 {
             get {
                 object obj = ResourceManager.GetObject("kisspng-check-mark-computer-icons-symbol-clip-art-tick-5acb37ef2a51d0.92971292152" +

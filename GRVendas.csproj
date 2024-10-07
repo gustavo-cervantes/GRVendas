@@ -201,5 +201,17 @@
   <ItemGroup>
     <None Include="Resources\kisspng-check-mark-computer-icons-symbol-clip-art-tick-5acb37ef2a51d0.9297129215232675671734.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\66697_accept_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\66697_accept_icon-removebg-preview.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\66684_basket_accept_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\66700_deny_icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

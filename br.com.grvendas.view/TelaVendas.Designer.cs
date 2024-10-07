@@ -322,9 +322,12 @@
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(442, 569);
+            this.btnCancelar.Image = global::GRVendas.Properties.Resources._66700_deny_icon;
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar.Location = new System.Drawing.Point(478, 569);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(192, 43);
+            this.btnCancelar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnCancelar.Size = new System.Drawing.Size(156, 43);
             this.btnCancelar.TabIndex = 20;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
@@ -333,9 +336,12 @@
             // btnPagamento
             // 
             this.btnPagamento.BackColor = System.Drawing.Color.White;
-            this.btnPagamento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnPagamento.Location = new System.Drawing.Point(702, 569);
+            this.btnPagamento.Image = global::GRVendas.Properties.Resources._66684_basket_accept_icon;
+            this.btnPagamento.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPagamento.Location = new System.Drawing.Point(659, 569);
             this.btnPagamento.Name = "btnPagamento";
+            this.btnPagamento.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnPagamento.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnPagamento.Size = new System.Drawing.Size(187, 43);
             this.btnPagamento.TabIndex = 19;
             this.btnPagamento.Text = "Receber e Finalizar";

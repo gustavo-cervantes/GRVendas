@@ -1,4 +1,5 @@
-﻿using GRVendas.br.com.grvendas.model;
+﻿using GRVendas.br.com.grvendas.dao;
+using GRVendas.br.com.grvendas.model;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -47,6 +48,55 @@ namespace GRVendas.br.com.grvendas.view
         }
 
         private void btnReceber_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // * Botão finalizar venda
+
+                decimal v_dinheiro, v_cartao, troco, totalpago, total;
+
+                v_dinheiro = decimal.Parse(txtDinheiro.Text);
+                v_cartao = decimal.Parse(txtCartao.Text);
+                total = decimal.Parse(txtTotal.Text);
+
+                // * Calcular o total pago
+                totalpago = v_dinheiro + v_cartao;
+
+                if (totalpago <= total)
+                {
+                    MessageBox.Show("O total pago é menor que o valor total da venda! ");
+                }
+                else
+                {
+                    // * Calcular o troco
+                    troco = totalpago - total;
+
+                    // * Criando um objeto da classe Venda
+
+                    Venda vendas = new Venda();
+
+                    // * Pegando o ID do cliente
+                    vendas.Cliente_id = cliente.Codigo;
+                    vendas.Data_venda = dataAtual;
+                    vendas.Total_venda = total;
+                    vendas.Obs = txtObs.Text;
+
+                    VendaDAO vdao = new VendaDAO();
+                    vdao.CadastrarVenda(vendas);
+
+                    // * Pegar o ID da ultima venda
+
+                }
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Aconteceu um erro ao finalizar o pagamento: " + erro);
+                throw;
+            }
+        }
+
+        private void txtObs_TextChanged(object sender, EventArgs e)
         {
 
         }

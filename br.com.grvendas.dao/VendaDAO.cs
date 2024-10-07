@@ -52,5 +52,42 @@ namespace GRVendas.br.com.grvendas.dao
         }
 
         #endregion
+
+        #region Método RetornaIdUltimaVenda
+
+        public int RetornaIdUltimaVenda()
+        {
+            try
+            {
+                int idvenda = 0;
+
+                // 1 - Criar o comando SQL
+                // -> Função chamada MAX() que retorna o maior valor ID existente no banco de dados
+                // -> Ou seja será sempre a última venda cadastrada
+                string sql = @"select max(id) id from tb_vendas"; 
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+
+                // 2 - Abrir conexão e executar comando
+                conexao.Open();
+
+                MySqlDataReader rs = executacmd.ExecuteReader();
+
+                if(rs.Read())
+                {
+                    idvenda = rs.GetInt32("id"); // Pega o valor do campo ID
+
+
+                }
+                conexao.Close();
+                return idvenda;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Aconteceu um erro: " + erro);
+                conexao.Close();
+                return 0;
+            }
+        }
+        #endregion
     }
 }

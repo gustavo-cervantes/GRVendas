@@ -115,6 +115,11 @@ namespace GRVendas.br.com.grvendas.view
             tela.ShowDialog();
         }
 
+        private void txtQtd_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnAdd_Click_1(object sender, EventArgs e)
         {
             // 1 - botão adicionar item

@@ -207,6 +207,7 @@
             this.txtQtd.Name = "txtQtd";
             this.txtQtd.Size = new System.Drawing.Size(61, 20);
             this.txtQtd.TabIndex = 17;
+            this.txtQtd.TextChanged += new System.EventHandler(this.txtQtd_TextChanged);
             // 
             // txtDesc
             // 

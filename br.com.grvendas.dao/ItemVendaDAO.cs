@@ -40,7 +40,7 @@ namespace GRVendas.br.com.grvendas.dao
                 conexao.Open();
                 executacmd.ExecuteNonQuery();
 
-                MessageBox.Show("Item cadastrado com sucesso!");
+                //MessageBox.Show("Item cadastrado com sucesso!");
                 conexao.Close();
             }
             catch (Exception erro)

@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -86,7 +87,31 @@ namespace GRVendas.br.com.grvendas.view
                     vdao.CadastrarVenda(vendas);
 
 
-                    // * Pegar o ID da ultima venda
+                    // ! Cadastrar os itens da venda
+                    
+                    // 1 - Para cada linha, capture os dados e salva no objeto linha
+                    foreach (DataRow linha in carrinho.Rows)
+                    {
+
+                        // 2 - instanciar a classe VendaItem
+
+                        ItemVenda item = new ItemVenda();
+
+                        // 3 - Guardar o ID da venda que acabou de ser cadastrada
+                        item.Venda_id = vdao.RetornaIdUltimaVenda();
+                        item.Produto_id = int.Parse(linha["Código"].ToString());
+                        item.Qtd = int.Parse(linha["Quantidade"].ToString());
+                        item.SubTotal = decimal.Parse(linha["Subtotal"].ToString());
+                        
+
+                        // 4 - Criar o OBJ item venda dao
+
+                        ItemVendaDAO itemdao = new ItemVendaDAO();
+                        itemdao.CadastrarItemVenda(item);
+                    }
+
+                    MessageBox.Show("Venda finalizada com sucesso!");
+                    this.Close();
 
                 }
 

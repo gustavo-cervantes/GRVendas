@@ -70,8 +70,18 @@ namespace GRVendas.br.com.grvendas.view
             if (e.KeyChar == 13)
             {
                 p = pdao.RetornaProdutoPorCodigo(int.Parse(txtCodigo.Text));
-                txtDesc.Text = p.Descricao; 
-                txtPreco.Text = p.Preco.ToString(); 
+
+                if (p != null)
+                {
+                    txtDesc.Text = p.Descricao; 
+                    txtPreco.Text = p.Preco.ToString(); 
+                }
+                else
+                {
+                    txtDesc.Clear();
+                    txtPreco.Clear();
+                }
+                
 
                 // fechar conexao e limpar campos
             }
@@ -126,6 +136,11 @@ namespace GRVendas.br.com.grvendas.view
         }
 
         private void txtQtd_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
         {
 
         }

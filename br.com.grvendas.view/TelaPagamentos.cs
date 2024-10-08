@@ -111,7 +111,11 @@ namespace GRVendas.br.com.grvendas.view
                     }
 
                     MessageBox.Show("Venda finalizada com sucesso!");
-                    this.Close();
+
+                    // this representa que esta manipulando o atual formulario ( no caso de pagamentos ) 
+                    this.Dispose();
+
+                    new TelaVendas().ShowDialog();
 
                 }
 

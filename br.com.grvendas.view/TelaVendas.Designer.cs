@@ -38,8 +38,6 @@
             this.txtCpf = new System.Windows.Forms.MaskedTextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnRemover = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
             this.txtQtd = new System.Windows.Forms.TextBox();
             this.txtDesc = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -56,6 +54,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnPagamento = new System.Windows.Forms.Button();
+            this.btnRemover = new System.Windows.Forms.Button();
+            this.btnAdicionar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -92,9 +92,9 @@
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Controls.Add(this.txtCpf);
             this.groupBox1.Controls.Add(this.label11);
-            this.groupBox1.Location = new System.Drawing.Point(37, 117);
+            this.groupBox1.Location = new System.Drawing.Point(12, 117);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(323, 156);
+            this.groupBox1.Size = new System.Drawing.Size(348, 175);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Cliente";
@@ -154,8 +154,8 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btnAdicionar);
             this.groupBox2.Controls.Add(this.btnRemover);
-            this.groupBox2.Controls.Add(this.btnAdd);
             this.groupBox2.Controls.Add(this.txtQtd);
             this.groupBox2.Controls.Add(this.txtDesc);
             this.groupBox2.Controls.Add(this.label2);
@@ -164,34 +164,12 @@
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.txtPreco);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Location = new System.Drawing.Point(37, 308);
+            this.groupBox2.Location = new System.Drawing.Point(12, 308);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(323, 237);
+            this.groupBox2.Size = new System.Drawing.Size(348, 304);
             this.groupBox2.TabIndex = 9;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Produto";
-            // 
-            // btnRemover
-            // 
-            this.btnRemover.BackColor = System.Drawing.Color.White;
-            this.btnRemover.Location = new System.Drawing.Point(161, 192);
-            this.btnRemover.Name = "btnRemover";
-            this.btnRemover.Size = new System.Drawing.Size(126, 30);
-            this.btnRemover.TabIndex = 18;
-            this.btnRemover.Text = "Remover Item";
-            this.btnRemover.UseVisualStyleBackColor = false;
-            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.BackColor = System.Drawing.Color.White;
-            this.btnAdd.Location = new System.Drawing.Point(13, 192);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(126, 30);
-            this.btnAdd.TabIndex = 10;
-            this.btnAdd.Text = "Adicionar Item";
-            this.btnAdd.UseVisualStyleBackColor = false;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // txtQtd
             // 
@@ -336,7 +314,7 @@
             // btnPagamento
             // 
             this.btnPagamento.BackColor = System.Drawing.Color.White;
-            this.btnPagamento.Image = global::GRVendas.Properties.Resources._66684_basket_accept_icon;
+            this.btnPagamento.Image = global::GRVendas.Properties.Resources._66692_basket_full_icon;
             this.btnPagamento.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnPagamento.Location = new System.Drawing.Point(659, 569);
             this.btnPagamento.Name = "btnPagamento";
@@ -344,9 +322,38 @@
             this.btnPagamento.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btnPagamento.Size = new System.Drawing.Size(187, 43);
             this.btnPagamento.TabIndex = 19;
-            this.btnPagamento.Text = "Receber e Finalizar";
+            this.btnPagamento.Text = "Finalizar venda";
             this.btnPagamento.UseVisualStyleBackColor = false;
             this.btnPagamento.Click += new System.EventHandler(this.btnPagamento_Click);
+            // 
+            // btnRemover
+            // 
+            this.btnRemover.BackColor = System.Drawing.Color.White;
+            this.btnRemover.Image = global::GRVendas.Properties.Resources._66686_basket_delete_icon;
+            this.btnRemover.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRemover.Location = new System.Drawing.Point(173, 188);
+            this.btnRemover.Name = "btnRemover";
+            this.btnRemover.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnRemover.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnRemover.Size = new System.Drawing.Size(156, 39);
+            this.btnRemover.TabIndex = 18;
+            this.btnRemover.Text = "Remover Item";
+            this.btnRemover.UseVisualStyleBackColor = false;
+            this.btnRemover.Click += new System.EventHandler(this.btnRemover_Click);
+            // 
+            // btnAdicionar
+            // 
+            this.btnAdicionar.BackColor = System.Drawing.Color.White;
+            this.btnAdicionar.Image = global::GRVendas.Properties.Resources._66685_basket_add_icon;
+            this.btnAdicionar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAdicionar.Location = new System.Drawing.Point(11, 188);
+            this.btnAdicionar.Name = "btnAdicionar";
+            this.btnAdicionar.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnAdicionar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnAdicionar.Size = new System.Drawing.Size(156, 39);
+            this.btnAdicionar.TabIndex = 19;
+            this.btnAdicionar.Text = "Adicionar Item";
+            this.btnAdicionar.UseVisualStyleBackColor = false;
             // 
             // TelaVendas
             // 
@@ -395,7 +402,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.MaskedTextBox txtCpf;
         private System.Windows.Forms.Button btnRemover;
-        private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.DataGridView tabelaProdutos;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox txtTotal;
@@ -406,5 +412,6 @@
         private System.Windows.Forms.Button btnPagamento;
         private System.Windows.Forms.TextBox txtData;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button btnAdicionar;
     }
 }

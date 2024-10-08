@@ -155,11 +155,17 @@
             // btnReceber
             // 
             this.btnReceber.BackColor = System.Drawing.Color.White;
-            this.btnReceber.Location = new System.Drawing.Point(29, 609);
+            this.btnReceber.Image = global::GRVendas.Properties.Resources._66684_basket_accept_icon;
+            this.btnReceber.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReceber.Location = new System.Drawing.Point(34, 609);
             this.btnReceber.Name = "btnReceber";
-            this.btnReceber.Size = new System.Drawing.Size(377, 43);
+            this.btnReceber.Padding = new System.Windows.Forms.Padding(120, 0, 0, 0);
+            this.btnReceber.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnReceber.Size = new System.Drawing.Size(372, 43);
             this.btnReceber.TabIndex = 26;
-            this.btnReceber.Text = "Receber";
+            this.btnReceber.Text = "Receber e finalizar";
+            this.btnReceber.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReceber.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnReceber.UseVisualStyleBackColor = false;
             this.btnReceber.Click += new System.EventHandler(this.btnReceber_Click);
             // 

@@ -213,5 +213,14 @@
   <ItemGroup>
     <None Include="Resources\66700_deny_icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\66692_basket_full_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\66685_basket_add_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\66686_basket_delete_icon.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

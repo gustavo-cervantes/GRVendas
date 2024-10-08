@@ -73,6 +73,36 @@ namespace GRVendas.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _66685_basket_add_icon {
+            get {
+                object obj = ResourceManager.GetObject("66685_basket_add_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _66686_basket_delete_icon {
+            get {
+                object obj = ResourceManager.GetObject("66686_basket_delete_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _66692_basket_full_icon {
+            get {
+                object obj = ResourceManager.GetObject("66692_basket_full_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _66697_accept_icon {
             get {
                 object obj = ResourceManager.GetObject("66697_accept_icon", resourceCulture);

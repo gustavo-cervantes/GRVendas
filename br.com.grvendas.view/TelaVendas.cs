@@ -51,7 +51,17 @@ namespace GRVendas.br.com.grvendas.view
             if (e.KeyChar == 13)
             {
                 cliente = cdao.RetornaClientePorCpf(txtCpf.Text);
-                txtNome.Text = cliente.Nome; // Nome fica dentro do cliente
+
+                if (cliente != null)
+                {
+                    txtNome.Text = cliente.Nome; // Nome fica dentro do cliente
+                }
+                else
+                {
+                    txtCpf.Clear();
+                    txtCpf.Focus();
+                }
+                
             }
         }
 

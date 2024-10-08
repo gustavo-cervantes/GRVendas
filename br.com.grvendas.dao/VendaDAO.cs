@@ -26,7 +26,7 @@ namespace GRVendas.br.com.grvendas.dao
             try
             {
                 // 1 - Criar o comando SQL
-                string sql = @"insert into tb_vendas (cliente_id, data_venda, total_venda, obs) 
+                string sql = @"insert into tb_vendas (cliente_id, data_venda, total_venda, observacoes) 
                                 values (@cliente_id, @data_venda, @total_venda, @obs)";
 
                 // 2 - Organizar e executar CMD

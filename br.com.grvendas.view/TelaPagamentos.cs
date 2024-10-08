@@ -82,7 +82,9 @@ namespace GRVendas.br.com.grvendas.view
                     vendas.Obs = txtObs.Text;
 
                     VendaDAO vdao = new VendaDAO();
+                    txtTroco.Text = troco.ToString();
                     vdao.CadastrarVenda(vendas);
+
 
                     // * Pegar o ID da ultima venda
 
@@ -98,6 +100,16 @@ namespace GRVendas.br.com.grvendas.view
 
         private void txtObs_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void TelaPagamentos_Load(object sender, EventArgs e)
+        {
+            // * Carrega a tela
+            txtTroco.Text = "0,00";
+            txtDinheiro.Text = "0,00";
+            txtCartao.Text = "0,00";
+            txtPix.Text = "0,00";
 
         }
     }

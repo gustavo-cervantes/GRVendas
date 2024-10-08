@@ -39,10 +39,10 @@
             this.label5 = new System.Windows.Forms.Label();
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.btnReceber = new System.Windows.Forms.Button();
             this.txtTroco = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txtObs = new System.Windows.Forms.TextBox();
+            this.btnReceber = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -152,23 +152,6 @@
             this.label7.TabIndex = 25;
             this.label7.Text = "Total:";
             // 
-            // btnReceber
-            // 
-            this.btnReceber.BackColor = System.Drawing.Color.White;
-            this.btnReceber.Image = global::GRVendas.Properties.Resources._66684_basket_accept_icon;
-            this.btnReceber.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReceber.Location = new System.Drawing.Point(34, 609);
-            this.btnReceber.Name = "btnReceber";
-            this.btnReceber.Padding = new System.Windows.Forms.Padding(120, 0, 0, 0);
-            this.btnReceber.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btnReceber.Size = new System.Drawing.Size(372, 43);
-            this.btnReceber.TabIndex = 26;
-            this.btnReceber.Text = "Receber e finalizar";
-            this.btnReceber.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnReceber.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnReceber.UseVisualStyleBackColor = false;
-            this.btnReceber.Click += new System.EventHandler(this.btnReceber_Click);
-            // 
             // txtTroco
             // 
             this.txtTroco.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -198,6 +181,23 @@
             this.txtObs.TabIndex = 29;
             this.txtObs.TextChanged += new System.EventHandler(this.txtObs_TextChanged);
             // 
+            // btnReceber
+            // 
+            this.btnReceber.BackColor = System.Drawing.Color.White;
+            this.btnReceber.Image = global::GRVendas.Properties.Resources._66684_basket_accept_icon;
+            this.btnReceber.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReceber.Location = new System.Drawing.Point(34, 609);
+            this.btnReceber.Name = "btnReceber";
+            this.btnReceber.Padding = new System.Windows.Forms.Padding(120, 0, 0, 0);
+            this.btnReceber.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.btnReceber.Size = new System.Drawing.Size(372, 43);
+            this.btnReceber.TabIndex = 26;
+            this.btnReceber.Text = "Receber e finalizar";
+            this.btnReceber.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnReceber.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnReceber.UseVisualStyleBackColor = false;
+            this.btnReceber.Click += new System.EventHandler(this.btnReceber_Click);
+            // 
             // TelaPagamentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -220,6 +220,7 @@
             this.Name = "TelaPagamentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Receber";
+            this.Load += new System.EventHandler(this.TelaPagamentos_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

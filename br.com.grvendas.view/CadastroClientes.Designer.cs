@@ -66,10 +66,10 @@
             this.dgvCliente = new System.Windows.Forms.DataGridView();
             this.txtPesquisa = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
-            this.btnNovo = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
+            this.btnNovo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tbClientes.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -483,22 +483,14 @@
             this.label21.TabIndex = 11;
             this.label21.Text = "Nome:";
             // 
-            // btnNovo
-            // 
-            this.btnNovo.BackColor = System.Drawing.Color.White;
-            this.btnNovo.Location = new System.Drawing.Point(164, 470);
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(99, 33);
-            this.btnNovo.TabIndex = 2;
-            this.btnNovo.Text = "Novo";
-            this.btnNovo.UseVisualStyleBackColor = false;
-            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
-            // 
             // btnSalvar
             // 
-            this.btnSalvar.Location = new System.Drawing.Point(269, 470);
+            this.btnSalvar.Image = global::GRVendas.Properties.Resources._66906_user_accept_icon;
+            this.btnSalvar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalvar.Location = new System.Drawing.Point(240, 466);
             this.btnSalvar.Name = "btnSalvar";
-            this.btnSalvar.Size = new System.Drawing.Size(99, 33);
+            this.btnSalvar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnSalvar.Size = new System.Drawing.Size(127, 39);
             this.btnSalvar.TabIndex = 3;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.UseVisualStyleBackColor = true;
@@ -506,9 +498,12 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(374, 470);
+            this.btnExcluir.Image = global::GRVendas.Properties.Resources._66908_user_delete_icon;
+            this.btnExcluir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnExcluir.Location = new System.Drawing.Point(373, 466);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(99, 33);
+            this.btnExcluir.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnExcluir.Size = new System.Drawing.Size(126, 39);
             this.btnExcluir.TabIndex = 4;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
@@ -516,13 +511,30 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(479, 470);
+            this.btnEditar.Image = global::GRVendas.Properties.Resources._66910_edit_user_icon;
+            this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditar.Location = new System.Drawing.Point(505, 466);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(99, 33);
+            this.btnEditar.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnEditar.Size = new System.Drawing.Size(126, 39);
             this.btnEditar.TabIndex = 5;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            // 
+            // btnNovo
+            // 
+            this.btnNovo.BackColor = System.Drawing.Color.White;
+            this.btnNovo.Image = global::GRVendas.Properties.Resources._66907_user_add_icon1;
+            this.btnNovo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNovo.Location = new System.Drawing.Point(107, 466);
+            this.btnNovo.Name = "btnNovo";
+            this.btnNovo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+            this.btnNovo.Size = new System.Drawing.Size(127, 39);
+            this.btnNovo.TabIndex = 2;
+            this.btnNovo.Text = "Novo";
+            this.btnNovo.UseVisualStyleBackColor = false;
+            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
             // 
             // CadastroClientes
             // 

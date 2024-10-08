@@ -222,5 +222,44 @@
   <ItemGroup>
     <None Include="Resources\66686_basket_delete_icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\66887_tag_add_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\66889_tag_deny_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\66728_edit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\66907_user_add_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\66906_user_accept_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\66908_user_delete_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\66910_edit_user_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\66806_folder_trash_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\66790_folder_delete_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\66788_folder_accept_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\66793_folder_edit_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\66789_folder_add_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\66907_user_add_icon1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

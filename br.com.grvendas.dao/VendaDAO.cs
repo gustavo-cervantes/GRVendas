@@ -133,5 +133,43 @@ namespace GRVendas.br.com.grvendas.dao
         }
         #endregion
 
+        #region Método ListarVendas
+        public DataTable ListarVendas()
+        {
+            try
+            {
+                // 1 Passo - Criar o comando sql e o datatable
+                DataTable tabelaHistorico = new DataTable();
+                string sql = @"select v.id  as  'Código',
+                             v.data_venda   as  'Data Venda',
+                             c.nome         as  'Cliente',
+                             v.total_venda  as  'Total', 
+                             v.observacoes  as  'Observações'
+                             from tb_vendas as v join tb_clientes as c on (v.cliente_id = c.id)";
+
+                // 2 Passo - Organizar e abrir o comando sql
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+
+                // 3 Passo - Abrir conexão
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                // 4 Passo - Criar o MySqlDataAdapter para preenchimento dos dados no data grid view
+                MySqlDataAdapter da = new MySqlDataAdapter(executacmd);
+                da.Fill(tabelaHistorico);
+
+                // 5 Passo - Fechar Conexão
+                conexao.Close();
+
+                return tabelaHistorico;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Aconteceu um erro ao listar as vendas:" + erro);
+                throw;
+            }
+        }
+        #endregion
+
     }
 }

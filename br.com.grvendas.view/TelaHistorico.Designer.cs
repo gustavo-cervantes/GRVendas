@@ -150,6 +150,7 @@
             this.btnPesquisar.TabIndex = 20;
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = false;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // colCod
             // 
@@ -195,6 +196,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "TelaHistorico";
             this.Text = "Histórico de Vendas";
+            this.Load += new System.EventHandler(this.TelaHistorico_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

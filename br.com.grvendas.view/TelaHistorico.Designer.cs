@@ -86,7 +86,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(165, 30);
+            this.label9.Location = new System.Drawing.Point(114, 30);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(72, 17);
             this.label9.TabIndex = 5;
@@ -96,7 +96,7 @@
             // 
             this.dtInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.dtInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtInicio.Location = new System.Drawing.Point(243, 28);
+            this.dtInicio.Location = new System.Drawing.Point(192, 28);
             this.dtInicio.Name = "dtInicio";
             this.dtInicio.Size = new System.Drawing.Size(102, 22);
             this.dtInicio.TabIndex = 7;
@@ -105,7 +105,7 @@
             // 
             this.dtFim.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.dtFim.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtFim.Location = new System.Drawing.Point(447, 28);
+            this.dtFim.Location = new System.Drawing.Point(396, 28);
             this.dtFim.Name = "dtFim";
             this.dtFim.Size = new System.Drawing.Size(102, 22);
             this.dtFim.TabIndex = 10;
@@ -114,7 +114,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(369, 30);
+            this.label4.Location = new System.Drawing.Point(318, 30);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(62, 17);
             this.label4.TabIndex = 8;
@@ -142,7 +142,7 @@
             this.btnPesquisar.BackColor = System.Drawing.Color.White;
             this.btnPesquisar.Image = global::GRVendas.Properties.Resources._66922_zoom_icon;
             this.btnPesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPesquisar.Location = new System.Drawing.Point(574, 19);
+            this.btnPesquisar.Location = new System.Drawing.Point(523, 19);
             this.btnPesquisar.Name = "btnPesquisar";
             this.btnPesquisar.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.btnPesquisar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;

@@ -3,6 +3,7 @@ using GRVendas.br.com.vendas.conexao;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -90,7 +91,46 @@ namespace GRVendas.br.com.grvendas.dao
         }
         #endregion
 
-        #region
+        #region Método ExibirHistoricoDeVendas
+        public DataTable ListarVendasPorPeriodo(DateTime datainicio, DateTime datafim)
+        {
+            try
+            {
+                // 1 - Passo Criar o DataTable e o comando SQL
+                DataTable tabelaHistorico = new DataTable();
+
+                string sql = @"select v.id  as  'Código',
+                             v.data_venda   as  'Data Venda',
+                             c.nome         as  'Cliente',
+                             v.total_venda  as  'Total', 
+                             v.observacoes  as  'Observações'
+                             from tb_vendas as v join tb_clientes as c on (v.cliente_id = c.id)
+                             where v.data_venda between @datainicio and @datafim";
+
+                // 2 - Passo organizar e executar o comando sql
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@datainicio", datainicio);
+                executacmd.Parameters.AddWithValue("@datafim", datafim);
+
+                // 3 - Abrir a conexao
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                // 4 - Criar o MySqlDataAdapter para preenchimento dos dados no data grid view
+                MySqlDataAdapter da = new MySqlDataAdapter(executacmd);
+                da.Fill(tabelaHistorico);
+
+                return tabelaHistorico;
+
+
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao listar vendas: " + erro);
+                return null;
+            }
+        }
         #endregion
 
     }

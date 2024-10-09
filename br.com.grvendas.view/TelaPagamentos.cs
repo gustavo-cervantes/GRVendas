@@ -56,6 +56,15 @@ namespace GRVendas.br.com.grvendas.view
 
                 decimal v_dinheiro, v_cartao, troco, totalpago, total;
 
+                // a instância da classe ProdutosDAO é criada para que você possa chamar o método CadastrarProduto
+                // ou qualquer outro método necessário para realizar operações relacionadas aos produtos.
+                // Através dessa instância, você pode acessar os métodos e atributos da classe ProdutosDAO
+                // e utilizá-los para interagir com o banco de dados e executar as operações desejadas.
+
+                ProdutosDAO dao_produto = new ProdutosDAO();
+
+                int qtd_estoque, qtd_comprada, estoque_atualizado;
+
                 v_dinheiro = decimal.Parse(txtDinheiro.Text);
                 v_cartao = decimal.Parse(txtCartao.Text);
                 total = decimal.Parse(txtTotal.Text);
@@ -102,9 +111,18 @@ namespace GRVendas.br.com.grvendas.view
                         item.Produto_id = int.Parse(linha["Código"].ToString());
                         item.Qtd = int.Parse(linha["Quantidade"].ToString());
                         item.SubTotal = decimal.Parse(linha["Subtotal"].ToString());
-                        
 
-                        // 4 - Criar o OBJ item venda dao
+                        // * Baixa no estoque
+                        qtd_estoque = dao_produto.RetornaEstoqueAtual(item.Produto_id); // ()- > id do produto
+                        qtd_comprada = item.Qtd;
+                        estoque_atualizado = qtd_estoque - qtd_comprada;
+
+                        // Chamando o método
+                        dao_produto.BaixaEstoque(item.Produto_id, estoque_atualizado);
+
+
+
+                        // 4 - Criar o OBJ item venda dao 
 
                         ItemVendaDAO itemdao = new ItemVendaDAO();
                         itemdao.CadastrarItemVenda(item);

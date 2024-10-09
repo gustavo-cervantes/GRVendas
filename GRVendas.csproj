@@ -136,6 +136,12 @@
     <Compile Include="br.com.grvendas.view\CadastroProdutos.Designer.cs">
       <DependentUpon>CadastroProdutos.cs</DependentUpon>
     </Compile>
+    <Compile Include="br.com.grvendas.view\TelaHistorico.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="br.com.grvendas.view\TelaHistorico.Designer.cs">
+      <DependentUpon>TelaHistorico.cs</DependentUpon>
+    </Compile>
     <Compile Include="br.com.grvendas.view\TelaPagamentos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -167,6 +173,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="br.com.grvendas.view\CadastroProdutos.resx">
       <DependentUpon>CadastroProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="br.com.grvendas.view\TelaHistorico.resx">
+      <DependentUpon>TelaHistorico.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="br.com.grvendas.view\TelaPagamentos.resx">
       <DependentUpon>TelaPagamentos.cs</DependentUpon>
@@ -260,6 +269,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\66907_user_add_icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\66922_zoom_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

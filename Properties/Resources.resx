@@ -124,8 +124,8 @@
   <data name="kisspng-check-mark-computer-icons-symbol-clip-art-tick-5acb37ef2a51d0.9297129215232675671734" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\kisspng-check-mark-computer-icons-symbol-clip-art-tick-5acb37ef2a51d0.9297129215232675671734.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="66906_user_accept_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\66906_user_accept_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="66684_basket_accept_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\66684_basket_accept_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="66806_folder_trash_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\66806_folder_trash_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,8 +151,11 @@
   <data name="66700_deny_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\66700_deny_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="66684_basket_accept_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\66684_basket_accept_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="66910_edit_user_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\66910_edit_user_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="66906_user_accept_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\66906_user_accept_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="66728_edit_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\66728_edit_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -166,6 +169,9 @@
   <data name="66887_tag_add_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\66887_tag_add_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="66907_user_add_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\66907_user_add_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="66908_user_delete_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\66908_user_delete_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -175,10 +181,7 @@
   <data name="66685_basket_add_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\66685_basket_add_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="66910_edit_user_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\66910_edit_user_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="66907_user_add_icon1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\66907_user_add_icon1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="66922_zoom_icon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\66922_zoom_icon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

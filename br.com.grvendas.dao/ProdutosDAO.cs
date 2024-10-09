@@ -265,6 +265,70 @@ namespace GRVendas.br.com.grvendas.dao
             }
         }
         #endregion
+
+        #region MétodoQueBaixaEstoque
+        public void BaixaEstoque(int idproduto, int qtdestoque)
+        {
+            try
+            {
+                // 1 - Criar o comando sql
+                string sql = "update tb_produtos set qtd_estoque =@qtd where id=@id";
+
+                // 2 - Organizar o comando SQL
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@qtd", qtdestoque);
+                executacmd.Parameters.AddWithValue("@id", idproduto);
+
+                // 3 - Abrir Conexao
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                // 4 - Fecha conexao
+                conexao.Close();
+
+
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Aconteceu o erro: " + erro);
+                throw;
+            }
+        }
+        #endregion
+
+        #region MétodoQueRetornaEstoqueAtual
+        public int RetornaEstoqueAtual(int idproduto)
+        {
+            try
+            {
+                // 1 - Criar o comando SQL 
+                string sql = "select qtd_estoque from tb_produtos where id=@id";
+                int qtd_estoque = 0;
+
+                // 2 - Organizar o comando SQL
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@id", idproduto);
+
+                // 3  - Abre conexão com o banco de dados
+                conexao.Open();
+
+                MySqlDataReader rs = executacmd.ExecuteReader();
+
+                if (rs.Read())
+                {
+                    qtd_estoque = rs.GetInt32("qtd_estoque");
+                    conexao.Close();
+                }
+                return qtd_estoque;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Aconteceu um erro: " + erro);
+                return 0;
+            }
+        }
+        #endregion
     }
 
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GRVendas.br.com.grvendas.dao;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +13,10 @@ namespace GRVendas.br.com.grvendas.view
 {
     public partial class TelaDetalhes : Form
     {
-        public TelaDetalhes()
+        int venda_id;
+        public TelaDetalhes(int idvenda)
         {
+            venda_id = idvenda;
             InitializeComponent();
         }
 
@@ -40,6 +43,13 @@ namespace GRVendas.br.com.grvendas.view
         private void txtObs_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void TelaDetalhes_Load(object sender, EventArgs e)
+        {
+            // 1 - Carrega tela de Detalhes
+            ItemVendaDAO dao = new ItemVendaDAO();
+            dgvDetalhes.DataSource = dao.ListarItensPorVenda(venda_id);
         }
     }
 }

@@ -42,7 +42,12 @@ namespace GRVendas.br.com.grvendas.view
         {
             // 1 - Passo - Abrir o formulario de detalhes
 
-            TelaDetalhes tela = new TelaDetalhes();
+            // Passando o id da venda
+            // Criação da variavel tipo int para receber o id da venda
+            // Capturando o id da venda da linha selecionada
+            int idvenda = int.Parse(dgHistorico.CurrentRow.Cells[0].Value.ToString());
+
+            TelaDetalhes tela = new TelaDetalhes(idvenda);
 
             // Formatando a data
             DateTime dataVenda = Convert.ToDateTime(dgHistorico.CurrentRow.Cells[1].Value.ToString());

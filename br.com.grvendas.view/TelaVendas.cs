@@ -69,23 +69,32 @@ namespace GRVendas.br.com.grvendas.view
         {
             if (e.KeyChar == 13)
             {
-                p = pdao.RetornaProdutoPorCodigo(int.Parse(txtCodigo.Text));
-
-                if (p != null)
+                if (int.TryParse(txtCodigo.Text, out int codigo))
                 {
-                    txtDesc.Text = p.Descricao; 
-                    txtPreco.Text = p.Preco.ToString(); 
+                    p = pdao.RetornaProdutoPorCodigo(codigo);
+
+                    if (p != null)
+                    {
+                        txtDesc.Text = p.Descricao;
+                        txtPreco.Text = p.Preco.ToString();
+                    }
+                    else
+                    {
+                        txtDesc.Clear();
+                        txtPreco.Clear();
+                    }
                 }
                 else
                 {
+                    // Lidar com entrada inválida
                     txtDesc.Clear();
                     txtPreco.Clear();
                 }
-                
 
-                // fechar conexao e limpar campos
+                // fechar conexão e limpar campos
             }
         }
+
 
         private void TelaVendas_Load(object sender, EventArgs e)
         {

@@ -504,10 +504,10 @@
             this.btnNovo.BackColor = System.Drawing.Color.White;
             this.btnNovo.Image = global::GRVendas.Properties.Resources._66789_folder_add_icon;
             this.btnNovo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNovo.Location = new System.Drawing.Point(89, 451);
+            this.btnNovo.Location = new System.Drawing.Point(89, 452);
             this.btnNovo.Name = "btnNovo";
             this.btnNovo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-            this.btnNovo.Size = new System.Drawing.Size(136, 40);
+            this.btnNovo.Size = new System.Drawing.Size(136, 39);
             this.btnNovo.TabIndex = 13;
             this.btnNovo.Text = "Novo";
             this.btnNovo.UseVisualStyleBackColor = false;

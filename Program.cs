@@ -17,7 +17,7 @@ namespace GRVendas
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new TelaHistorico());
+            Application.Run(new TelaVendas());
         }
     }
 }

@@ -31,12 +31,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.dtInicio = new System.Windows.Forms.DateTimePicker();
+            this.btnPesquisar = new System.Windows.Forms.Button();
             this.dtFim = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
+            this.dtInicio = new System.Windows.Forms.DateTimePicker();
+            this.label9 = new System.Windows.Forms.Label();
             this.dgHistorico = new System.Windows.Forms.DataGridView();
-            this.btnPesquisar = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgHistorico)).BeginInit();
@@ -77,24 +77,20 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Consulta";
             // 
-            // label9
+            // btnPesquisar
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(114, 30);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(72, 17);
-            this.label9.TabIndex = 5;
-            this.label9.Text = "Data Inicio:";
-            // 
-            // dtInicio
-            // 
-            this.dtInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.dtInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtInicio.Location = new System.Drawing.Point(192, 28);
-            this.dtInicio.Name = "dtInicio";
-            this.dtInicio.Size = new System.Drawing.Size(102, 22);
-            this.dtInicio.TabIndex = 7;
+            this.btnPesquisar.BackColor = System.Drawing.Color.White;
+            this.btnPesquisar.Image = global::GRVendas.Properties.Resources._66922_zoom_icon;
+            this.btnPesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnPesquisar.Location = new System.Drawing.Point(523, 19);
+            this.btnPesquisar.Name = "btnPesquisar";
+            this.btnPesquisar.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
+            this.btnPesquisar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.btnPesquisar.Size = new System.Drawing.Size(156, 39);
+            this.btnPesquisar.TabIndex = 20;
+            this.btnPesquisar.Text = "Pesquisar";
+            this.btnPesquisar.UseVisualStyleBackColor = false;
+            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // dtFim
             // 
@@ -115,6 +111,25 @@
             this.label4.TabIndex = 8;
             this.label4.Text = "Data Fim:";
             // 
+            // dtInicio
+            // 
+            this.dtInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
+            this.dtInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtInicio.Location = new System.Drawing.Point(192, 28);
+            this.dtInicio.Name = "dtInicio";
+            this.dtInicio.Size = new System.Drawing.Size(102, 22);
+            this.dtInicio.TabIndex = 7;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(114, 30);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(72, 17);
+            this.label9.TabIndex = 5;
+            this.label9.Text = "Data Inicio:";
+            // 
             // dgHistorico
             // 
             this.dgHistorico.AllowUserToAddRows = false;
@@ -125,22 +140,8 @@
             this.dgHistorico.ReadOnly = true;
             this.dgHistorico.Size = new System.Drawing.Size(753, 245);
             this.dgHistorico.TabIndex = 11;
+            this.dgHistorico.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgHistorico_CellClick);
             this.dgHistorico.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgHistorico_CellContentClick);
-            // 
-            // btnPesquisar
-            // 
-            this.btnPesquisar.BackColor = System.Drawing.Color.White;
-            this.btnPesquisar.Image = global::GRVendas.Properties.Resources._66922_zoom_icon;
-            this.btnPesquisar.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnPesquisar.Location = new System.Drawing.Point(523, 19);
-            this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnPesquisar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btnPesquisar.Size = new System.Drawing.Size(156, 39);
-            this.btnPesquisar.TabIndex = 20;
-            this.btnPesquisar.Text = "Pesquisar";
-            this.btnPesquisar.UseVisualStyleBackColor = false;
-            this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
             // 
             // TelaHistorico
             // 

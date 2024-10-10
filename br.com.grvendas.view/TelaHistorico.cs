@@ -38,6 +38,24 @@ namespace GRVendas.br.com.grvendas.view
 
         }
 
+        private void dgHistorico_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // 1 - Passo - Abrir o formulario de detalhes
+
+            TelaDetalhes tela = new TelaDetalhes();
+
+            // Formatando a data
+            DateTime dataVenda = Convert.ToDateTime(dgHistorico.CurrentRow.Cells[1].Value.ToString());
+
+            tela.txtData.Text = dataVenda.ToString("dd/MM/yyyy");
+            tela.txtCliente.Text = dgHistorico.CurrentRow.Cells[2].Value.ToString();
+            tela.txtTotal.Text = dgHistorico.CurrentRow.Cells[3].Value.ToString();
+            tela.txtObs.Text = dgHistorico.CurrentRow.Cells[4].Value.ToString();
+
+            // Ou tela.Show();
+            tela.ShowDialog(); 
+        }
+
         private void dgHistorico_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 

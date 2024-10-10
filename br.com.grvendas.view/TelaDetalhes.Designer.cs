@@ -31,16 +31,18 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtObs = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtTotal = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.txtData = new System.Windows.Forms.TextBox();
+            this.txtCliente = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
+            this.dgvDetalhes = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalhes)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -66,20 +68,75 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox4);
+            this.groupBox1.Controls.Add(this.txtObs);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.textBox3);
+            this.groupBox1.Controls.Add(this.txtTotal);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtData);
+            this.groupBox1.Controls.Add(this.txtCliente);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label9);
             this.groupBox1.Location = new System.Drawing.Point(24, 98);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(753, 302);
+            this.groupBox1.Size = new System.Drawing.Size(753, 241);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Dados da Venda";
+            // 
+            // txtObs
+            // 
+            this.txtObs.Location = new System.Drawing.Point(79, 103);
+            this.txtObs.Multiline = true;
+            this.txtObs.Name = "txtObs";
+            this.txtObs.ReadOnly = true;
+            this.txtObs.Size = new System.Drawing.Size(652, 110);
+            this.txtObs.TabIndex = 14;
+            this.txtObs.TextChanged += new System.EventHandler(this.txtObs_TextChanged);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(25, 112);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(35, 17);
+            this.label3.TabIndex = 13;
+            this.label3.Text = "Obs:";
+            // 
+            // txtTotal
+            // 
+            this.txtTotal.Location = new System.Drawing.Point(426, 30);
+            this.txtTotal.Name = "txtTotal";
+            this.txtTotal.ReadOnly = true;
+            this.txtTotal.Size = new System.Drawing.Size(100, 20);
+            this.txtTotal.TabIndex = 12;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(323, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(97, 17);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Total da venda:";
+            // 
+            // txtData
+            // 
+            this.txtData.Location = new System.Drawing.Point(79, 63);
+            this.txtData.Name = "txtData";
+            this.txtData.ReadOnly = true;
+            this.txtData.Size = new System.Drawing.Size(159, 20);
+            this.txtData.TabIndex = 10;
+            // 
+            // txtCliente
+            // 
+            this.txtCliente.Location = new System.Drawing.Point(79, 30);
+            this.txtCliente.Name = "txtCliente";
+            this.txtCliente.ReadOnly = true;
+            this.txtCliente.Size = new System.Drawing.Size(146, 20);
+            this.txtCliente.TabIndex = 9;
+            this.txtCliente.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label4
             // 
@@ -102,61 +159,25 @@
             this.label9.Text = "Cliente:";
             this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
-            // textBox1
+            // dgvDetalhes
             // 
-            this.textBox1.Location = new System.Drawing.Point(79, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(146, 20);
-            this.textBox1.TabIndex = 9;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(66, 63);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(159, 20);
-            this.textBox2.TabIndex = 10;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(125, 101);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 12;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(22, 101);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(97, 17);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Total da venda:";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(63, 148);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(652, 110);
-            this.textBox4.TabIndex = 14;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(22, 157);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(35, 17);
-            this.label3.TabIndex = 13;
-            this.label3.Text = "Obs:";
+            this.dgvDetalhes.AllowUserToAddRows = false;
+            this.dgvDetalhes.AllowUserToDeleteRows = false;
+            this.dgvDetalhes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetalhes.Location = new System.Drawing.Point(24, 364);
+            this.dgvDetalhes.Name = "dgvDetalhes";
+            this.dgvDetalhes.ReadOnly = true;
+            this.dgvDetalhes.Size = new System.Drawing.Size(753, 150);
+            this.dgvDetalhes.TabIndex = 12;
+            this.dgvDetalhes.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalhes_CellClick);
+            this.dgvDetalhes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDetalhes_CellContentClick);
             // 
             // TelaDetalhes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 546);
+            this.Controls.Add(this.dgvDetalhes);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel1);
             this.Name = "TelaDetalhes";
@@ -165,6 +186,7 @@
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetalhes)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -176,11 +198,12 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.DataGridView dgvDetalhes;
+        public System.Windows.Forms.TextBox txtCliente;
+        public System.Windows.Forms.TextBox txtObs;
+        public System.Windows.Forms.TextBox txtTotal;
+        public System.Windows.Forms.TextBox txtData;
     }
 }

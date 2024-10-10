@@ -26,5 +26,20 @@ namespace GRVendas.br.com.grvendas.view
         {
 
         }
+
+        private void dgvDetalhes_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dgvDetalhes_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void txtObs_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -37,11 +37,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.dgHistorico = new System.Windows.Forms.DataGridView();
             this.btnPesquisar = new System.Windows.Forms.Button();
-            this.colCod = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colData = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colObs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgHistorico)).BeginInit();
@@ -125,17 +120,12 @@
             this.dgHistorico.AllowUserToAddRows = false;
             this.dgHistorico.AllowUserToDeleteRows = false;
             this.dgHistorico.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgHistorico.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.colCod,
-            this.colData,
-            this.colCliente,
-            this.colTotal,
-            this.colObs});
             this.dgHistorico.Location = new System.Drawing.Point(24, 193);
             this.dgHistorico.Name = "dgHistorico";
             this.dgHistorico.ReadOnly = true;
             this.dgHistorico.Size = new System.Drawing.Size(753, 245);
             this.dgHistorico.TabIndex = 11;
+            this.dgHistorico.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgHistorico_CellContentClick);
             // 
             // btnPesquisar
             // 
@@ -151,40 +141,6 @@
             this.btnPesquisar.Text = "Pesquisar";
             this.btnPesquisar.UseVisualStyleBackColor = false;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click);
-            // 
-            // colCod
-            // 
-            this.colCod.HeaderText = "Código";
-            this.colCod.Name = "colCod";
-            this.colCod.ReadOnly = true;
-            this.colCod.Width = 60;
-            // 
-            // colData
-            // 
-            this.colData.HeaderText = "Data da Venda";
-            this.colData.Name = "colData";
-            this.colData.ReadOnly = true;
-            this.colData.Width = 200;
-            // 
-            // colCliente
-            // 
-            this.colCliente.HeaderText = "Cliente";
-            this.colCliente.Name = "colCliente";
-            this.colCliente.ReadOnly = true;
-            this.colCliente.Width = 200;
-            // 
-            // colTotal
-            // 
-            this.colTotal.HeaderText = "Total";
-            this.colTotal.Name = "colTotal";
-            this.colTotal.ReadOnly = true;
-            this.colTotal.Width = 150;
-            // 
-            // colObs
-            // 
-            this.colObs.HeaderText = "Observação";
-            this.colObs.Name = "colObs";
-            this.colObs.ReadOnly = true;
             // 
             // TelaHistorico
             // 
@@ -217,10 +173,5 @@
         private System.Windows.Forms.DateTimePicker dtInicio;
         private System.Windows.Forms.DataGridView dgHistorico;
         private System.Windows.Forms.Button btnPesquisar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCod;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colData;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTotal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colObs;
     }
 }

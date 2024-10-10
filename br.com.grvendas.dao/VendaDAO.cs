@@ -91,7 +91,7 @@ namespace GRVendas.br.com.grvendas.dao
         }
         #endregion
 
-        #region Método ExibirHistoricoDeVendas
+        #region Método ListarVendasPorPeriodo
         public DataTable ListarVendasPorPeriodo(DateTime datainicio, DateTime datafim)
         {
             try

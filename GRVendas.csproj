@@ -136,6 +136,12 @@
     <Compile Include="br.com.grvendas.view\CadastroProdutos.Designer.cs">
       <DependentUpon>CadastroProdutos.cs</DependentUpon>
     </Compile>
+    <Compile Include="br.com.grvendas.view\TelaDetalhes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="br.com.grvendas.view\TelaDetalhes.Designer.cs">
+      <DependentUpon>TelaDetalhes.cs</DependentUpon>
+    </Compile>
     <Compile Include="br.com.grvendas.view\TelaHistorico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -173,6 +179,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="br.com.grvendas.view\CadastroProdutos.resx">
       <DependentUpon>CadastroProdutos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="br.com.grvendas.view\TelaDetalhes.resx">
+      <DependentUpon>TelaDetalhes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="br.com.grvendas.view\TelaHistorico.resx">
       <DependentUpon>TelaHistorico.cs</DependentUpon>

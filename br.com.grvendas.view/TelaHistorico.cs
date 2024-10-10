@@ -37,5 +37,10 @@ namespace GRVendas.br.com.grvendas.view
             dgHistorico.DefaultCellStyle.ForeColor = Color.Black;
 
         }
+
+        private void dgHistorico_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

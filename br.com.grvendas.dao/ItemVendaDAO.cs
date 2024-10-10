@@ -3,6 +3,7 @@ using GRVendas.br.com.vendas.conexao;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,6 +48,50 @@ namespace GRVendas.br.com.grvendas.dao
             {
                 MessageBox.Show("Aconteceu um erro" + erro);
                 throw;
+            }
+        }
+        #endregion
+
+        #region Método ListarItensPorVenda
+        public DataTable ListarItensPorVenda(int venda_id)
+        {
+            try
+            {
+                // 1 - Passo Criar o DataTable e o comando SQL
+                DataTable tabelaItens = new DataTable();
+
+                string sql = @"SELECT i.id as 'Código',
+                             p.descricao as 'Descricao',
+                             i.qtd as 'Quantidade',
+                             p.preco as 'Preço',
+                             i.subtotal as 'Subtotal' 
+ 
+                             FROM tb_itensvendas as  i join
+                             tb_produtos as p on (i.produto_id = p.id) WHERE venda_id = @venda_id";
+
+
+
+                // 2 - Passo organizar e executar o comando sql
+                MySqlCommand executacmd = new MySqlCommand(sql, conexao);
+                executacmd.Parameters.AddWithValue("@venda_id", venda_id);
+
+                // 3 - Abrir a conexao
+                conexao.Open();
+                executacmd.ExecuteNonQuery();
+
+                // 4 - Criar o MySqlDataAdapter para preenchimento dos dados no data grid view
+                MySqlDataAdapter da = new MySqlDataAdapter(executacmd);
+                da.Fill(tabelaItens);
+
+                return tabelaItens;
+
+
+
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao listar vendas: " + erro);
+                return null;
             }
         }
         #endregion

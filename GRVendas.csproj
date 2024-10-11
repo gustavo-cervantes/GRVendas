@@ -148,6 +148,12 @@
     <Compile Include="br.com.grvendas.view\TelaHistorico.Designer.cs">
       <DependentUpon>TelaHistorico.cs</DependentUpon>
     </Compile>
+    <Compile Include="br.com.grvendas.view\TelaLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="br.com.grvendas.view\TelaLogin.Designer.cs">
+      <DependentUpon>TelaLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="br.com.grvendas.view\TelaPagamentos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="br.com.grvendas.view\TelaHistorico.resx">
       <DependentUpon>TelaHistorico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="br.com.grvendas.view\TelaLogin.resx">
+      <DependentUpon>TelaLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="br.com.grvendas.view\TelaPagamentos.resx">
       <DependentUpon>TelaPagamentos.cs</DependentUpon>

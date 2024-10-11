@@ -63,6 +63,16 @@ namespace GRVendas.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1624843 {
+            get {
+                object obj = ResourceManager.GetObject("1624843", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _66684_basket_accept_icon {
             get {
                 object obj = ResourceManager.GetObject("66684_basket_accept_icon", resourceCulture);
@@ -307,6 +317,36 @@ namespace GRVendas.Properties {
             get {
                 object obj = ResourceManager.GetObject("kisspng-check-mark-computer-icons-symbol-clip-art-tick-5acb37ef2a51d0.92971292152" +
                         "32675671734", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap pdv {
+            get {
+                object obj = ResourceManager.GetObject("pdv", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap touchtech {
+            get {
+                object obj = ResourceManager.GetObject("touchtech", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ttt {
+            get {
+                object obj = ResourceManager.GetObject("ttt", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -309,5 +309,17 @@
   <ItemGroup>
     <None Include="Resources\66878_settings_icon.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pdv.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1624843.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\touchtech.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ttt.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -154,6 +154,12 @@
     <Compile Include="br.com.grvendas.view\TelaLogin.Designer.cs">
       <DependentUpon>TelaLogin.cs</DependentUpon>
     </Compile>
+    <Compile Include="br.com.grvendas.view\TelaMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="br.com.grvendas.view\TelaMenu.Designer.cs">
+      <DependentUpon>TelaMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="br.com.grvendas.view\TelaPagamentos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -194,6 +200,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="br.com.grvendas.view\TelaLogin.resx">
       <DependentUpon>TelaLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="br.com.grvendas.view\TelaMenu.resx">
+      <DependentUpon>TelaMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="br.com.grvendas.view\TelaPagamentos.resx">
       <DependentUpon>TelaPagamentos.cs</DependentUpon>
@@ -290,6 +299,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\66922_zoom_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\66919_user_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\66914_user_search_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\66878_settings_icon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

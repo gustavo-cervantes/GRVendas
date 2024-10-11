@@ -193,6 +193,16 @@ namespace GRVendas.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _66878_settings_icon {
+            get {
+                object obj = ResourceManager.GetObject("66878_settings_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _66887_tag_add_icon {
             get {
                 object obj = ResourceManager.GetObject("66887_tag_add_icon", resourceCulture);
@@ -256,6 +266,26 @@ namespace GRVendas.Properties {
         internal static System.Drawing.Bitmap _66910_edit_user_icon {
             get {
                 object obj = ResourceManager.GetObject("66910_edit_user_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _66914_user_search_icon {
+            get {
+                object obj = ResourceManager.GetObject("66914_user_search_icon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _66919_user_icon {
+            get {
+                object obj = ResourceManager.GetObject("66919_user_icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

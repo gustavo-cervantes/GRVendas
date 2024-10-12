@@ -261,6 +261,44 @@ namespace GRVendas.br.com.grvendas.dao
 
         #endregion
 
+        #region Método que efetua o login
+        public bool EfetuarLogin(string Email, string Senha)
+        {
+            try
+            {
+                // 1 - Passo - Criar o Comando SQL
+                string sql = @"SELECT * from tb_funcionarios where email = @email and senha = @senha";
+
+                // 2 - Passo - Organizar o comando sql
+                MySqlCommand executaCmd = new MySqlCommand(sql, Conexao);
+                executaCmd.Parameters.AddWithValue("@email", Email);
+                executaCmd.Parameters.AddWithValue("@senha", Senha);
+
+                // 3 - Abrir conexao
+                Conexao.Open();
+
+                // leitor de dados, retorna quando uso o metodo ExecuteReader
+                MySqlDataReader reader = executaCmd.ExecuteReader();
+
+                if (reader.Read())
+                {
+                    // login realizado com sucesso
+                }
+                else
+                {
+                    // a senha ou o email estao incorretos jm
+                }
+
+                return true;
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show("Erro ao realizar login: " + erro);
+                return false;
+            }
+        }
+        #endregion
+
 
 
 

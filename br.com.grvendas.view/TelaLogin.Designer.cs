@@ -83,7 +83,6 @@
             this.txtSenha.Location = new System.Drawing.Point(102, 173);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.PasswordChar = '*';
-            this.txtSenha.ReadOnly = true;
             this.txtSenha.Size = new System.Drawing.Size(457, 29);
             this.txtSenha.TabIndex = 15;
             // 
@@ -111,6 +110,7 @@
             this.btnEntrar.TabIndex = 21;
             this.btnEntrar.Text = "Entrar";
             this.btnEntrar.UseVisualStyleBackColor = false;
+            this.btnEntrar.Click += new System.EventHandler(this.btnEntrar_Click);
             // 
             // TelaLogin
             // 

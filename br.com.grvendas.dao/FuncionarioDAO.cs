@@ -283,10 +283,14 @@ namespace GRVendas.br.com.grvendas.dao
                 if (reader.Read())
                 {
                     // login realizado com sucesso
+                    MessageBox.Show("Login realizado com sucesso!");
+                    return true;
                 }
                 else
                 {
-                    // a senha ou o email estao incorretos jm
+                    // a senha ou o email estao incorretos 
+                    MessageBox.Show("E-mail ou senha incorretos.");
+                    return false;
                 }
 
                 return true;

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TelaMenu));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
@@ -56,6 +57,7 @@
             this.txtHora = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
             this.txtNome = new System.Windows.Forms.ToolStripStatusLabel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.menuStrip2.SuspendLayout();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -277,6 +279,11 @@
             this.txtNome.Size = new System.Drawing.Size(90, 17);
             this.txtNome.Text = "Gustavo Roldão";
             // 
+            // timer1
+            // 
+            this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // TelaMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -293,6 +300,7 @@
             this.Name = "TelaMenu";
             this.Text = "Menu Principal - Controle de Vendas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.TelaMenu_Load);
             this.menuStrip2.ResumeLayout(false);
             this.menuStrip2.PerformLayout();
             this.statusStrip1.ResumeLayout(false);
@@ -324,12 +332,13 @@
         private System.Windows.Forms.ToolStripMenuItem menuSair;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel1;
-        private System.Windows.Forms.ToolStripStatusLabel txtData;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
-        private System.Windows.Forms.ToolStripStatusLabel txtHora;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
-        private System.Windows.Forms.ToolStripStatusLabel txtNome;
         public System.Windows.Forms.ToolStripMenuItem menuProdutos;
         public System.Windows.Forms.ToolStripMenuItem menuHistoricoV;
+        public System.Windows.Forms.ToolStripStatusLabel txtNome;
+        public System.Windows.Forms.ToolStripStatusLabel txtData;
+        public System.Windows.Forms.ToolStripStatusLabel txtHora;
+        private System.Windows.Forms.Timer timer1;
     }
 }

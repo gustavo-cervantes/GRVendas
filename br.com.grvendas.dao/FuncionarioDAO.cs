@@ -293,6 +293,9 @@ namespace GRVendas.br.com.grvendas.dao
                     // Abrir a tela menu principal
                     TelaMenu telaMenu = new TelaMenu();
 
+                    // Capturando o nome do funcionário
+                    telaMenu.txtNome.Text = nome;
+
                     // Se o nível de acesso for admin
                     if (nivel.Equals("Administrador"))
                     {

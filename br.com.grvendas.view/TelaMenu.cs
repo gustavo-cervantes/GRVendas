@@ -26,5 +26,17 @@ namespace GRVendas.br.com.grvendas.view
         {
 
         }
+
+        private void TelaMenu_Load(object sender, EventArgs e)
+        {
+            // Pegando a Data atual
+            txtData.Text = DateTime.Now.ToShortDateString();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            // Programando dentro do timer
+            txtHora.Text = DateTime.Now.ToLongTimeString();
+        }
     }
 }

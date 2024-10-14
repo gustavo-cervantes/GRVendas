@@ -80,5 +80,33 @@ namespace GRVendas.br.com.grvendas.view
             cadastroFornecedor.tbFornecedor.SelectedTab = cadastroFornecedor.tabPage2;
             cadastroFornecedor.ShowDialog();
         }
+
+        private void menuCadastroP_Click(object sender, EventArgs e)
+        {
+            // Abrir a tela de cadastro de produto
+            CadastroProdutos cadastroProdutos = new CadastroProdutos();
+            cadastroProdutos.ShowDialog();
+        }
+
+        private void menuConsultaP_Click(object sender, EventArgs e)
+        {
+            // Abrir a tela de consulta de produto
+            CadastroProdutos cadastroProdutos = new CadastroProdutos();
+            cadastroProdutos.tbProdutos.SelectedTab = cadastroProdutos.tabPage2;
+            cadastroProdutos.ShowDialog();
+        }
+
+        private void menuNovaV_Click(object sender, EventArgs e)
+        {
+            TelaVendas telaVendas = new TelaVendas();
+            telaVendas.ShowDialog();
+        }
+
+        private void menuHistoricoV_Click(object sender, EventArgs e)
+        {
+            TelaHistorico telaHistorico = new TelaHistorico();
+            telaHistorico.ShowDialog();
+
+        }
     }
 }

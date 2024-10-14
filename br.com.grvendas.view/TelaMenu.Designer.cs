@@ -177,12 +177,14 @@
             this.menuCadastroP.Name = "menuCadastroP";
             this.menuCadastroP.Size = new System.Drawing.Size(188, 22);
             this.menuCadastroP.Text = "Cadastro de Produtos";
+            this.menuCadastroP.Click += new System.EventHandler(this.menuCadastroP_Click);
             // 
             // menuConsultaP
             // 
             this.menuConsultaP.Name = "menuConsultaP";
             this.menuConsultaP.Size = new System.Drawing.Size(188, 22);
             this.menuConsultaP.Text = "Consulta de Produtos";
+            this.menuConsultaP.Click += new System.EventHandler(this.menuConsultaP_Click);
             // 
             // menuVendas
             // 
@@ -198,14 +200,16 @@
             // menuNovaV
             // 
             this.menuNovaV.Name = "menuNovaV";
-            this.menuNovaV.Size = new System.Drawing.Size(178, 22);
+            this.menuNovaV.Size = new System.Drawing.Size(180, 22);
             this.menuNovaV.Text = "Nova Venda";
+            this.menuNovaV.Click += new System.EventHandler(this.menuNovaV_Click);
             // 
             // menuHistoricoV
             // 
             this.menuHistoricoV.Name = "menuHistoricoV";
-            this.menuHistoricoV.Size = new System.Drawing.Size(178, 22);
+            this.menuHistoricoV.Size = new System.Drawing.Size(180, 22);
             this.menuHistoricoV.Text = "Histórico de Vendas";
+            this.menuHistoricoV.Click += new System.EventHandler(this.menuHistoricoV_Click);
             // 
             // menuConfiguracoes
             // 

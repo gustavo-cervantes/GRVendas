@@ -22,11 +22,6 @@ namespace GRVendas.br.com.grvendas.view
 
         }
 
-        private void consultaDeClientesToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void TelaMenu_Load(object sender, EventArgs e)
         {
             // Pegando a Data atual
@@ -37,6 +32,53 @@ namespace GRVendas.br.com.grvendas.view
         {
             // Programando dentro do timer
             txtHora.Text = DateTime.Now.ToLongTimeString();
+        }
+
+        private void menuCadastroC_Click(object sender, EventArgs e)
+        {
+            // 1 - Abrir a tela de clientes
+            // 2 - Instanciar a tela de clientes
+            CadastroClientes tela = new CadastroClientes();
+            tela.ShowDialog();
+
+        }
+
+        private void menuConsultaC_Click(object sender, EventArgs e)
+        {
+            // Abrir a tela de clientes com a aba de consulta aberta
+            CadastroClientes tela = new CadastroClientes();
+            tela.tbClientes.SelectedTab = tela.tabPage2;
+            tela.ShowDialog();
+        }
+
+        private void menuCadastroFc_Click(object sender, EventArgs e)
+        {
+            // Abrir a tela de cadastro de funcionários
+            CadastroFuncionarios cadastroFuncionarios = new CadastroFuncionarios();
+            cadastroFuncionarios.ShowDialog();
+        }
+
+        private void menuConsultaFc_Click(object sender, EventArgs e)
+        {
+            // Abrir a tela de consulta de funcionarios
+            CadastroFuncionarios cadastroFuncionarios = new CadastroFuncionarios();
+            cadastroFuncionarios.tbFuncionario.SelectedTab = cadastroFuncionarios.tabPage2;
+            cadastroFuncionarios.ShowDialog();
+        }
+
+        private void menuCadastroF_Click(object sender, EventArgs e)
+        {
+            // Abrir tela de cadastro de fornecedor
+            CadastroFornecedor cadastroFornecedor = new CadastroFornecedor();
+            cadastroFornecedor.ShowDialog();
+        }
+
+        private void menuConsultaF_Click(object sender, EventArgs e)
+        {
+            // Abrir tela de cadastro de fornecedor
+            CadastroFornecedor cadastroFornecedor = new CadastroFornecedor();
+            cadastroFornecedor.tbFornecedor.SelectedTab = cadastroFornecedor.tabPage2;
+            cadastroFornecedor.ShowDialog();
         }
     }
 }

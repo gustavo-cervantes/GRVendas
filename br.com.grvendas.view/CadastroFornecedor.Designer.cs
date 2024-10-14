@@ -547,7 +547,6 @@
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnNovo;
-        private System.Windows.Forms.TabControl tbFornecedor;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button btnPesquisar;
         private System.Windows.Forms.ComboBox cbEstado;
@@ -576,10 +575,11 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox txtCodigo;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridView dgvFornecedor;
         private System.Windows.Forms.TextBox txtPesquisa;
         private System.Windows.Forms.Label label21;
+        public System.Windows.Forms.TabControl tbFornecedor;
+        public System.Windows.Forms.TabPage tabPage2;
     }
 }

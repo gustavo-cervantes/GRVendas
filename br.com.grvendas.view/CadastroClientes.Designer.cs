@@ -567,7 +567,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TabControl tbClientes;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.MaskedTextBox txtTelefone;
         private System.Windows.Forms.Label label12;
@@ -601,11 +600,12 @@
         private System.Windows.Forms.Button btnSalvar;
         private System.Windows.Forms.Button btnExcluir;
         private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.DataGridView dgvCliente;
         private System.Windows.Forms.TextBox txtPesquisa;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button btnPesquisar;
+        public System.Windows.Forms.TabControl tbClientes;
+        public System.Windows.Forms.TabPage tabPage2;
     }
 }

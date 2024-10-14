@@ -1,5 +1,6 @@
 ﻿using Google.Protobuf;
 using GRVendas.br.com.grvendas.model;
+using GRVendas.br.com.grvendas.view;
 using GRVendas.br.com.vendas.conexao;
 using MySql.Data.MySqlClient;
 using System;
@@ -282,8 +283,31 @@ namespace GRVendas.br.com.grvendas.dao
 
                 if (reader.Read())
                 {
-                    // login realizado com sucesso
-                    MessageBox.Show("Login realizado com sucesso!");
+
+                    // Realizando o login com nível de acesso
+                    string nivel = reader.GetString("nivel_acesso");
+                    string nome = reader.GetString("nome");
+
+                    MessageBox.Show("Login realizado com sucesso, bem vindo! " + nome + ("."));
+
+                    // Abrir a tela menu principal
+                    TelaMenu telaMenu = new TelaMenu();
+
+                    // Se o nível de acesso for admin
+                    if (nivel.Equals("Administrador"))
+                    {
+
+                        telaMenu.Show();
+                    }
+                    else if(nivel.Equals("Vendedor"))
+                    {
+                        // Permissões de vendedores
+                        telaMenu.menuProdutos.Visible = false;
+                        telaMenu.menuHistoricoV.Enabled = false;
+                        telaMenu.Show();
+
+                    }
+
                     return true;
                 }
                 else
@@ -293,7 +317,6 @@ namespace GRVendas.br.com.grvendas.dao
                     return false;
                 }
 
-                return true;
             }
             catch (Exception erro)
             {

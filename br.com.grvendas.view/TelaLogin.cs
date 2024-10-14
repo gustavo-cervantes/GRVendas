@@ -29,8 +29,7 @@ namespace GRVendas.br.com.grvendas.view
 
             if (dao.EfetuarLogin(email, senha))
             {
-               TelaMenu telaMenu = new TelaMenu();
-                telaMenu.Show();
+
 
                 // Fecha a tela de login
                 // Dispose fecha a tela de login com CRASH!!!!                                              

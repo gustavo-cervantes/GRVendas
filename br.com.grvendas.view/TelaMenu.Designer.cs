@@ -214,13 +214,13 @@
             // menuTrocaU
             // 
             this.menuTrocaU.Name = "menuTrocaU";
-            this.menuTrocaU.Size = new System.Drawing.Size(180, 22);
+            this.menuTrocaU.Size = new System.Drawing.Size(165, 22);
             this.menuTrocaU.Text = "Trocar de Usuário";
             // 
             // menuSair
             // 
             this.menuSair.Name = "menuSair";
-            this.menuSair.Size = new System.Drawing.Size(180, 22);
+            this.menuSair.Size = new System.Drawing.Size(165, 22);
             this.menuSair.Text = "Sair";
             // 
             // statusStrip1
@@ -315,12 +315,10 @@
         private System.Windows.Forms.ToolStripMenuItem menuFornecedores;
         private System.Windows.Forms.ToolStripMenuItem menuCadastroF;
         private System.Windows.Forms.ToolStripMenuItem menuConsultaF;
-        private System.Windows.Forms.ToolStripMenuItem menuProdutos;
         private System.Windows.Forms.ToolStripMenuItem menuCadastroP;
         private System.Windows.Forms.ToolStripMenuItem menuConsultaP;
         private System.Windows.Forms.ToolStripMenuItem menuVendas;
         private System.Windows.Forms.ToolStripMenuItem menuNovaV;
-        private System.Windows.Forms.ToolStripMenuItem menuHistoricoV;
         private System.Windows.Forms.ToolStripMenuItem menuConfiguracoes;
         private System.Windows.Forms.ToolStripMenuItem menuTrocaU;
         private System.Windows.Forms.ToolStripMenuItem menuSair;
@@ -331,5 +329,7 @@
         private System.Windows.Forms.ToolStripStatusLabel txtHora;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
         private System.Windows.Forms.ToolStripStatusLabel txtNome;
+        public System.Windows.Forms.ToolStripMenuItem menuProdutos;
+        public System.Windows.Forms.ToolStripMenuItem menuHistoricoV;
     }
 }

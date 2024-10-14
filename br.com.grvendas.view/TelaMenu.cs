@@ -108,5 +108,23 @@ namespace GRVendas.br.com.grvendas.view
             telaHistorico.ShowDialog();
 
         }
+
+        private void menuSair_Click(object sender, EventArgs e)
+        {
+            // TO:DO Desconectar
+            DialogResult result = MessageBox.Show("Deseja realmente sair?", "Sair", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (result == DialogResult.Yes)
+            {
+                // Yes
+                Application.Exit();
+            }
+        }
+
+        private void menuTrocaU_Click(object sender, EventArgs e)
+        {
+            // TO:DO Retornar para a tela de login
+            
+        }
     }
 }

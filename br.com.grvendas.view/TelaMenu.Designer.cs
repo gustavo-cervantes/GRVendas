@@ -225,14 +225,16 @@
             // menuTrocaU
             // 
             this.menuTrocaU.Name = "menuTrocaU";
-            this.menuTrocaU.Size = new System.Drawing.Size(165, 22);
+            this.menuTrocaU.Size = new System.Drawing.Size(180, 22);
             this.menuTrocaU.Text = "Trocar de Usuário";
+            this.menuTrocaU.Click += new System.EventHandler(this.menuTrocaU_Click);
             // 
             // menuSair
             // 
             this.menuSair.Name = "menuSair";
-            this.menuSair.Size = new System.Drawing.Size(165, 22);
+            this.menuSair.Size = new System.Drawing.Size(180, 22);
             this.menuSair.Text = "Sair";
+            this.menuSair.Click += new System.EventHandler(this.menuSair_Click);
             // 
             // statusStrip1
             // 

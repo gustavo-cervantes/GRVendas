@@ -288,6 +288,7 @@ namespace GRVendas.br.com.grvendas.dao
                     string nivel = reader.GetString("nivel_acesso");
                     string nome = reader.GetString("nome");
 
+                        
                     MessageBox.Show("Login realizado com sucesso, bem vindo! " + nome + ("."));
 
                     // Abrir a tela menu principal

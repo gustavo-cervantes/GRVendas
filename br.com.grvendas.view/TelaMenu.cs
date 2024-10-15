@@ -124,7 +124,12 @@ namespace GRVendas.br.com.grvendas.view
         private void menuTrocaU_Click(object sender, EventArgs e)
         {
             // TO:DO Retornar para a tela de login
-            
+
+            TelaLogin login = new TelaLogin(); // Cria uma nova instância da tela de login
+
+            login.Show(); // Exibe a tela de login
+
+            this.Hide(); // Esconde a tela de menu  
         }
     }
 }

@@ -34,6 +34,7 @@ namespace GRVendas.br.com.grvendas.view
                 // Fecha a tela de login
                 // Dispose fecha a tela de login com CRASH!!!!                                              
                 this.Hide();
+                
             }
             
 
